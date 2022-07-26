@@ -18,6 +18,7 @@ const About = () => {
 
           <div className="about__me-image">
 
+            {/*eslint-disable-next-line*/} 
             <img src={ME} alt="About Image" />
 
           </div>
@@ -32,7 +33,7 @@ const About = () => {
 
               <FaAward className='about__icon'/>
               <h5>Experience</h5>
-              <small>3+ Years Learning</small>
+              <small>4+ Years Learning</small>
 
             </article>
 
