@@ -1,10 +1,10 @@
 import React from 'react'
-import './portfolio.css'
+import './blog.css'
 import POST from '../../assets/blog-post.jpg'
 
-const Portfolio = () => {
+const Blog = () => {
   return (
-    <section id='portfolio'>
+    <section id='blog'>
     
      <h5>My Recent Post</h5>
      <h6>(yea i also have a blog, check it out!)</h6>
@@ -85,4 +85,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default Blog
