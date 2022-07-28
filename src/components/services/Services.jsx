@@ -7,7 +7,7 @@ const Services = () => {
     <section id='services'>
 
       <h5>What I Can Do</h5>
-      {/* h6>at this point i think we understand that i develop code</h6> */}
+      <h6>(at this point i think we understand that i develop code)</h6>
       <h2>Services</h2>
 
       <div className="container services__container">
