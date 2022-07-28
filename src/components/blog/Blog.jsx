@@ -2,6 +2,53 @@ import React from 'react'
 import './blog.css'
 import POST from '../../assets/blog-post.jpg'
 
+const data = [
+
+  {
+    id: 1,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  },
+  {
+    id: 2,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  },
+  {
+    id: 3,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  },
+  {
+    id: 4,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  },
+  {
+    id: 5,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  },
+  {
+    id: 6,
+    image: POST,
+    title: 'This is a post title',
+    github: 'https://github.com',
+    gitlab: 'https://gitlba.com'
+  }
+
+]
+
 const Blog = () => {
   return (
     <section id='blog'>
@@ -12,102 +59,36 @@ const Blog = () => {
 
      <div className="container blog__container">
 
-      <article className='blog__item'>
+      {
 
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
+        data.map(({id, image, title, github, gitlab}) => {
 
-        <h3>This is a post title</h3>
+          return(
 
-          <div className="blog__item-cta">
+            <article key={id} className='blog__item'>
 
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+              <div className="blog__item-image">
+              
+                <img src={image} alt={title} />
+                
+              </div>
 
-          </div>
+              <h3>{title}</h3>
 
-      </article>
-      <article className='blog__item'>
+              <div className="blog__item-cta">
 
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
+                <a href={github} className='btn' target='_blank'>Github</a>
+                <a href={gitlab} className='btn btn-primary' target='_blank'>Gitlab</a>
 
-        <h3>This is a post title</h3>
+              </div>
 
-          <div className="blog__item-cta">
+            </article>
 
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+          )
 
-          </div>
+        })
 
-      </article>
-      <article className='blog__item'>
-
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
-
-        <h3>This is a post title</h3>
-
-          <div className="blog__item-cta">
-
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
-
-          </div>
-
-      </article>
-      <article className='blog__item'>
-
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
-
-        <h3>This is a post title</h3>
-
-          <div className="blog__item-cta">
-
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
-
-          </div>
-
-      </article>
-      <article className='blog__item'>
-
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
-
-        <h3>This is a post title</h3>
-
-          <div className="blog__item-cta">
-
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
-
-          </div>
-
-      </article>
-      <article className='blog__item'>
-
-        <div className="blog__item-image">
-          <img src={POST} alt="" />
-        </div>
-
-        <h3>This is a post title</h3>
-
-          <div className="blog__item-cta">
-
-            <a href="https://github.com" className='btn' target='_blank'>Github</a>
-            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
-
-          </div>
-
-      </article>
+      }
 
      </div>
 
