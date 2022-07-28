@@ -19,8 +19,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
       <article className='blog__item'>
@@ -30,8 +35,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
       <article className='blog__item'>
@@ -41,8 +51,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
       <article className='blog__item'>
@@ -52,8 +67,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
       <article className='blog__item'>
@@ -63,8 +83,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
       <article className='blog__item'>
@@ -74,8 +99,13 @@ const Blog = () => {
         </div>
 
         <h3>This is a post title</h3>
-          <a href="https://github.com" className='btn' target='_blank'>Github</a>
-          <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          <div className="blog__item-cta">
+
+            <a href="https://github.com" className='btn' target='_blank'>Github</a>
+            <a href="https://gitlab.com" className='btn btn-primary' target='_blank'>Gitlab</a>
+
+          </div>
 
       </article>
 
