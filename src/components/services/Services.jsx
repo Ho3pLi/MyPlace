@@ -7,7 +7,7 @@ const Services = () => {
     <section id='services'>
 
       <h5>What I Can Do</h5>
-      <h6>at this point i think we understand that i develop code</h6>
+      {/* h6>at this point i think we understand that i develop code</h6> */}
       <h2>Services</h2>
 
       <div className="container services__container">
@@ -23,32 +23,24 @@ const Services = () => {
           <ul className='service__list'>
 
             <li>
-
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
             </li>
 
           </ul>
@@ -66,32 +58,28 @@ const Services = () => {
           <ul className='service__list'>
 
             <li>
-
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
+              <BiCheck className='service__list-icon'/>
+              <p> irdgas </p>
             </li>
 
           </ul>
@@ -109,32 +97,24 @@ const Services = () => {
           <ul className='service__list'>
 
             <li>
-
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
+            </li>
+            <li>
               <BiCheck className='service__list-icon'/>
-              <p>
-                irdgas
-              </p>
-
+              <p> irdgas </p>
             </li>
 
           </ul>
