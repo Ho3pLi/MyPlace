@@ -77,7 +77,7 @@ const Blog = () => {
 
               <div className="blog__item-cta">
 
-                <a href={github} className='btn' target='_blank'>Github</a>
+                <a href={github} className='btn' target='_blank'>Githubb</a>
                 <a href={gitlab} className='btn btn-primary' target='_blank'>Gitlab</a>
 
               </div>
