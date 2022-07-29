@@ -24,27 +24,6 @@ const data = [
     title: 'This is a post title',
     github: 'https://github.com',
     gitlab: 'https://gitlba.com'
-  },
-  {
-    id: 4,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
-  },
-  {
-    id: 5,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
-  },
-  {
-    id: 6,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
   }
 
 ]
@@ -77,7 +56,7 @@ const Blog = () => {
 
               <div className="blog__item-cta">
 
-                <a href={github} className='btn' target='_blank'>Githubb</a>
+                <a href={github} className='btn' target='_blank'>Github</a>
                 <a href={gitlab} className='btn btn-primary' target='_blank'>Gitlab</a>
 
               </div>
