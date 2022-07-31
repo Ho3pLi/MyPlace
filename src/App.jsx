@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 import NavG from './components/navG/NavG'
+import NavGG from './components/navGG/NavGG'
 import About from './components/about/About'
 import Experience from './components/experience/Experience'
 import Services from './components/services/Services'
@@ -10,6 +11,7 @@ import BlogPreview from './components/blogPreview/BlogPreview'
 import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import Error from './components/error/Error'
 
 const App = () => {
   return (
@@ -18,10 +20,10 @@ const App = () => {
           <Routes>
             <Route path='/' element={
               <>
-                <Header />
-                <Nav />
-                <About />
-                <Experience />
+                <Header/>
+                <Nav/>
+                <About/>
+                <Experience/>
                 <Services/>
                 <BlogPreview/>
                 <Contact/>
@@ -34,6 +36,12 @@ const App = () => {
                 <NavG/>
               </>}  
             />
+            <Route path='*' element={
+              <>
+                <Error/>
+                <NavGG/>
+              </>
+            }/>
           </Routes>
       </Router>
     </>
