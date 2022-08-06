@@ -5,7 +5,7 @@ import './error.css'
 
 function Error() {
   return (
-    <div className="container">
+    <div className="error">
 
       <div className="copy-container center-xy">
 

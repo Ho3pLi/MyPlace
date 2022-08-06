@@ -20,7 +20,7 @@ p {
   margin: 0;
 }
 
-.container h5, .container small {
+.error h5, .error small {
 
     color: var(--color-bg);
     cursor: default;
