@@ -1,11 +1,11 @@
-.blog__container {
+.blogPreview__container {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
 
-.blog__item {
+.blogPreview__item {
 
     background: var(--color-bg-variant);
     padding: 1.3rem;
@@ -14,24 +14,24 @@
     transition: var(--transition);
 }
 
-.blog__item:hover {
+.blogPreview__item:hover {
 
     border-color: var(--color-primary-variant);
     background: transparent;
 }
 
-.blog__item-image {
+.blogPreview__item-image {
 
     border-radius: 1.5rem;
     overflow: hidden;
 }
 
-.blog__item h3 {
+.blogPreview__item h3 {
 
     margin: 1.2rem 0 2rem;
 }
 
-.blog__item-cta {
+.blogPreview__item-cta {
 
     display: flex;
     gap: 1rem;
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 1024px){
     
-    .blog__container {
+    .blogPreview__container {
 
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 600px){
 
-    .blog__container {
+    .blogPreview__container {
 
         grid-template-columns: 1fr;
         gap: 1rem;

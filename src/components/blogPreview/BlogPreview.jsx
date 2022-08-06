@@ -1,5 +1,5 @@
 import React from 'react'
-import './blog.css'
+import './blogPreview.css'
 import POST from '../../assets/blog-post.jpg'
 
 const data = [
@@ -28,15 +28,15 @@ const data = [
 
 ]
 
-const Blog = () => {
+const BlogPreview = () => {
   return (
-    <section id='blog'>
+    <section id='blogPreview'>
     
      <h5>My Recent Post</h5>
      <h6>(yea i also have a blog, check it out!)</h6>
      <h2>Blog</h2>
 
-     <div className="container blog__container">
+     <div className="container blogPreview__container">
 
       {
 
@@ -44,9 +44,9 @@ const Blog = () => {
 
           return(
 
-            <article key={id} className='blog__item'>
+            <article key={id} className='blogPreview__item'>
 
-              <div className="blog__item-image">
+              <div className="blogPreview__item-image">
               
                 <img src={image} alt={title} />
                 
@@ -54,7 +54,7 @@ const Blog = () => {
 
               <h3>{title}</h3>
 
-              <div className="blog__item-cta">
+              <div className="blogPreview__item-cta">
 
                 <a href={github} className='btn' target='_blank'>Github</a>
                 <a href={gitlab} className='btn btn-primary' target='_blank'>Gitlab</a>
@@ -75,4 +75,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default BlogPreview
