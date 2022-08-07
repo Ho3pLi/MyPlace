@@ -14,7 +14,7 @@ const BlogPreview = () => {
 
       {
 
-        Data.map(({id, image, title, github, gitlab}) => {
+        Data.map(({id, image, title, github, read}) => {
 
           return(
 
@@ -30,8 +30,8 @@ const BlogPreview = () => {
 
               <div className="blogPreview__item-cta">
 
+                <a href={read} className='btn btn-primary' target='_blank'>Read</a>
                 <a href={github} className='btn' target='_blank'>Github</a>
-                <a href={gitlab} className='btn btn-primary' target='_blank'>Gitlab</a>
 
               </div>
 
