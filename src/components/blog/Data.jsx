@@ -8,21 +8,21 @@ const Data = [
       image: POST,
       title: 'This is a post title',
       github: 'https://github.com',
-      gitlab: 'https://gitlba.com'
+      read: 'https://gitlba.com'
     },
     {
       id: 2,
       image: POST,
       title: 'This is a post title',
       github: 'https://github.com',
-      gitlab: 'https://gitlba.com'
+      read: 'https://gitlba.com'
     },
     {
       id: 3,
       image: POST,
       title: 'This is a post title',
       github: 'https://github.com',
-      gitlab: 'https://gitlba.com'
+      read: 'https://gitlba.com'
     }
   
   ]
