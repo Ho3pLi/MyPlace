@@ -3,7 +3,7 @@ import './error.css'
 
 
 
-function Error() {
+const Error = () => {
   return (
     <div className="error">
 
