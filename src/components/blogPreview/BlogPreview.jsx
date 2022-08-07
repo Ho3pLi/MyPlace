@@ -1,32 +1,6 @@
 import React from 'react'
 import './blogPreview.css'
-import POST from '../../assets/blog-post.jpg'
-
-const data = [
-
-  {
-    id: 1,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
-  },
-  {
-    id: 2,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
-  },
-  {
-    id: 3,
-    image: POST,
-    title: 'This is a post title',
-    github: 'https://github.com',
-    gitlab: 'https://gitlba.com'
-  }
-
-]
+import Data from '../blog/Data'
 
 const BlogPreview = () => {
   return (
@@ -40,7 +14,7 @@ const BlogPreview = () => {
 
       {
 
-        data.map(({id, image, title, github, gitlab}) => {
+        Data.map(({id, image, title, github, gitlab}) => {
 
           return(
 
