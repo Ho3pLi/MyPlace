@@ -38,6 +38,13 @@
     margin-bottom: 1rem;
 }
 
+#blogPreview h6:hover {
+
+    cursor: pointer;
+    color: white;
+    transition: var(--transition);
+}
+
 /* Media queries */
 
 @media screen and (max-width: 1024px){
