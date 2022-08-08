@@ -12,6 +12,7 @@ import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 import Error from './components/error/Error'
+import Post1 from './components/post/Post_1'
 
 const App = () => {
   return (
@@ -40,6 +41,12 @@ const App = () => {
               <>
                 <Error/>
                 <NavGG/>
+              </>
+            }/>
+            <Route path='/Blog/buymeanr6please' element={
+              <>
+                <Post1/>
+                <NavG/>
               </>
             }/>
           </Routes>
