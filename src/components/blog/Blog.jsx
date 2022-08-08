@@ -1,8 +1,12 @@
 import React from 'react'
 import './blog.css'
 import Data from './Data'
+import {useNavigate} from 'react-router-dom'
 
 const Blog = () => {
+
+  let navigate = useNavigate()
+
   return (
     <section id='blog'>
 
@@ -38,7 +42,7 @@ const Blog = () => {
             
                 <div className="blog__item-cta">
             
-                  <a href={read} className='btn btn-primary' target='_blank'>Read</a>
+                  <a href={read} onClick={() => {navigate({read})}} className='btn btn-primary'>Read</a>
                   <a href={github} className='btn' target='_blank'>Github</a>
             
                 </div>
