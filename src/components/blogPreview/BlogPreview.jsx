@@ -24,10 +24,9 @@ const BlogPreview = () => {
 
       {
 
-        Data.map(({id, image, title, github, read}) => {
+        Data.slice(-3).map(({id, image, title, github, read}) => {
 
           return(
-
             <article key={id} className='blogPreview__item'>
 
               <div className="blogPreview__item-image">
