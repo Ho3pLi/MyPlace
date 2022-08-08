@@ -40,7 +40,7 @@ const BlogPreview = () => {
 
               <div className="blogPreview__item-cta">
 
-                <a href={read} className='btn btn-primary' target='_blank'>Read</a>
+                <a href={read} className='btn btn-primary'>Read</a>
                 <a href={github} className='btn' target='_blank'>Github</a>
 
               </div>
