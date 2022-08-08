@@ -3,9 +3,13 @@ import './footer.css'
 import {FaGithub} from 'react-icons/fa'
 import {FiGitlab} from 'react-icons/fi'
 import {BsLinkedin} from 'react-icons/bs'
+import {useNavigate} from 'react-router-dom'
 
 const Footer = () => {
-  return (
+
+  let navigate = useNavigate()
+
+  return (    
     <footer>
 
       <a href="#" className='footer__logo'>Daniele Barile</a>
@@ -16,7 +20,7 @@ const Footer = () => {
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <li><a href="/Blog" onClick={() => {navigate("/Blog")}}>Blog</a></li>
         <li><a href="#contact">Contact</a></li>
 
       </ul>
