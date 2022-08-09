@@ -6,23 +6,9 @@ const Data = [
     {
       id: 1,
       image: POST,
-      title: 'This is a post title',
+      title: 'This is my first post!',
       github: 'https://github.com',
-      read: 'https://gitlba.com'
-    },
-    {
-      id: 2,
-      image: POST,
-      title: 'This is a post title',
-      github: 'https://github.com',
-      read: 'https://gitlba.com'
-    },
-    {
-      id: 3,
-      image: POST,
-      title: 'This is a post title',
-      github: 'https://github.com',
-      read: 'https://gitlba.com'
+      read: '/Blog/buymeanr6please'
     }
   
   ]
