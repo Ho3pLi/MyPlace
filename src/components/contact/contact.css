@@ -47,6 +47,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    margin: 0 1rem 0 1rem;
 }
 
 input, textarea {
@@ -77,4 +78,11 @@ input, textarea {
 
         width: var(--container-width-sm);
     }
+
+    .contact__options {
+
+        margin: 0 1rem 0 1rem;
+    }
+
+    
 }
