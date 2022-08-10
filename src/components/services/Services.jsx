@@ -24,23 +24,15 @@ const Services = () => {
 
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> I get along with photo editing </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> I have some experience (and curses) with the use of After Effects </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
-            </li>
-            <li>
-              <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
-            </li>
-            <li>
-              <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> Nothing more (actually I'll delegate everything to my graphic designer friend hehe) </p>
             </li>
 
           </ul>
@@ -59,27 +51,27 @@ const Services = () => {
 
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> I could develop a fantastic hello world ! </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> I can build a nice flowchart !! </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> Apparte gli scherzi, I can develop a web application, complete with db </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> I can develop Java software </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> Working with APIs </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> And so on! </p>
             </li>
 
           </ul>
@@ -98,23 +90,23 @@ const Services = () => {
 
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> play rl with you if you have no friends </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> play r6 with you, only if you don't use montagne/tachanka </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> idk, build a fpv drone </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> set up a server easily at home (this is cool) </p>
             </li>
             <li>
               <BiCheck className='service__list-icon'/>
-              <p> irdgas </p>
+              <p> or assemble a computer, only if you don't give me a 3090, otherwise I feel poor </p>
             </li>
 
           </ul>
