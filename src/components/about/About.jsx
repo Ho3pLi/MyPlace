@@ -57,7 +57,7 @@ const About = () => {
 
           <p>
 
-            idgas
+          My name is Daniele Barile. Full Stack developer. I have a strong interest in cybersecurity and pentesting. I am a determined, available guy and I have the belief that there is always more to learn. I constantly update myself on the latest news from the tech world and beyond.
 
           </p>
 
