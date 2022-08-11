@@ -1,22 +1,88 @@
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .post__container {
-  text-align: center;
   height: 100%;
   position: relative;
 }
 
+.post__container h1{
+  text-align: left;
+  margin: 2vh;
+}
+
+.post__container a.blinkItem{
+  animation: blinker 1s linear infinite;
+  opacity: 1;
+}
+
 .post__banner{
 
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  width: 25%;
-  height: 25%;
+  width: 65%;
+  height: 65%;
   display: block;
-  margin: 1rem auto;
+  margin: 3vh auto;
+}
+
+.post__header h2{
+
+  font-size: 2.5rem;
+  margin: 0 0 0 13vw;
+}
+
+.post__header small{
+
+  margin: 0 0 0 14vw;
+}
+
+.post__header img{
+
+  width: 3%;
+  height: 3%;
 }
 
 .post__content{
 
+  background-color: transparent;
+  border-radius: 0.5rem;
+  width: 50%;
+  display: block;
+  margin: 2vh 0 0 13vw;
+}
+
+.post__content p{
+
+  font-size: 1.3rem;
   
+}
+
+.post__container hr{
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6); 
+  height: 0px;
+  margin: 3vh 0 3vh 0;
+}
+
+.post__content img.MeFooterBlog{
+
+  object-fit: cover;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  opacity: 1;
+  width: 11%;
+  height: 11%;
+  float: left;    
+}
+
+.post__content p.post__footer{
+
+  font-size: medium;
+  margin: 4vh 0 10vh 5vw;
 }
 
 /* Media queries */

@@ -1,18 +1,26 @@
 import React from "react"
 import "./post_1.css"
-import POST1 from "../../assets/MyFirstPost.png"
+import POST1 from "../../assets/MyFirstPostBn.png"
+import ME from "../../assets/Me_square.jpg"
 
 function Post_1() {
   return (
-    <div className="post__container">
+    <div className="container post__container">
 
+      <h1 className="$">$<a className="blinkItem">_</a> Daniele's Blog</h1>
+      
       <div className="post__banner">
 
         <img src={POST1} alt="MyFirstPost" />
 
       </div>
 
-      <h1>My first post!</h1>
+      <div className="post__header">
+
+      <small>August 11, 2022 • 1 min{/* TO-DO: devo mettere il coso del caffè */}</small>
+      <h2>My first post!</h2>
+      
+      </div>
 
       <div className="post__content">
 
@@ -25,6 +33,10 @@ function Post_1() {
         That said, I think I've said it all for now.
         Happy coding :)
         </p>
+
+        <hr />
+
+        <img src={ME} alt="Me" className="MeFooterBlog"/> <p className="post__footer">Personal blog of Daniele Barile. I'm a fullstack developer, i also have a strong interest in cybersecurity and pentesting.</p>
 
       </div>
 
