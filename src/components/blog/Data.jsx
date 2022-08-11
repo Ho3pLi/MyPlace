@@ -1,5 +1,5 @@
 import React from "react"
-import POST1 from "../../assets/MyFirstPost.png"
+import POST1 from "../../assets/MyFirstPostBn.png"
 
 const Data = [
 
