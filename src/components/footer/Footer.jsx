@@ -1,9 +1,9 @@
-import React from 'react'
-import './footer.css'
-import {FaGithub} from 'react-icons/fa'
-import {FiGitlab} from 'react-icons/fi'
-import {BsLinkedin} from 'react-icons/bs'
-import {useNavigate} from 'react-router-dom'
+import React from "react"
+import "./footer.css"
+import {FaGithub} from "react-icons/fa"
+import {FiGitlab} from "react-icons/fi"
+import {BsLinkedin} from "react-icons/bs"
+import {useNavigate} from "react-router-dom"
 
 const Footer = () => {
 
@@ -12,9 +12,9 @@ const Footer = () => {
   return (    
     <footer>
 
-      <a href="#" className='footer__logo'>Daniele Barile</a>
+      <a href="#" className="footer__logo">Daniele Barile</a>
 
-      <ul className='permalinks'>
+      <ul className="permalinks">
 
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>

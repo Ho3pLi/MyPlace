@@ -1,16 +1,16 @@
-import React from 'react'
-import './blog.css'
-import Data from './Data'
-import {useNavigate} from 'react-router-dom'
+import React from "react"
+import "./blog.css"
+import Data from "./Data"
+import {useNavigate} from "react-router-dom"
 
 const Blog = () => {
 
   let navigate = useNavigate()
 
   return (
-    <section id='blog'>
+    <section id="blog">
 
-      <header className='blogHeader'>
+      <header className="blogHeader">
 
         <div className="container blogHeader__container">
 
@@ -30,7 +30,7 @@ const Blog = () => {
           
             return(
             
-              <article key={id} className='blog__item'>
+              <article key={id} className="blog__item">
               
                 <div className="blog__item-image">
                 
@@ -42,8 +42,8 @@ const Blog = () => {
             
                 <div className="blog__item-cta">
             
-                  <a href={read} onClick={() => {navigate({read})}} className='btn btn-primary'>Read</a>
-                  <a href={github} className='btn' target='_blank'>Github</a>
+                  <a href={read} onClick={() => {navigate({read})}} className="btn btn-primary">Read</a>
+                  <a href={github} className="btn" target="_blank">Github</a>
             
                 </div>
             

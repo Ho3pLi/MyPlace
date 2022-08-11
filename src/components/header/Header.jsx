@@ -1,8 +1,8 @@
-import React from 'react'
-import './header.css'
-import CTA from './CTA'
-import ME from '../../assets/me.png'
-import HeaderSocial from './HeaderSocial'
+import React from "react"
+import "./header.css"
+import CTA from "./CTA"
+import ME from "../../assets/me.png"
+import HeaderSocial from "./HeaderSocial"
 
 const Header = () => {
   return (
@@ -23,7 +23,7 @@ const Header = () => {
 
         </div>
 
-        <a href="#contact" className='scroll__down'>Scroll Down</a>
+        <a href="#contact" className="scroll__down">Scroll Down</a>
       </div>
 
     </header>

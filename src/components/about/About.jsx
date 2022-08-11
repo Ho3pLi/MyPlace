@@ -1,13 +1,13 @@
-import React from 'react'
-import './about.css'
-import ME from '../../assets/me_about.JPEG'
-import {FaAward} from 'react-icons/fa'
-import {FiUsers} from 'react-icons/fi'
-import {VscFolderLibrary} from 'react-icons/vsc'
+import React from "react"
+import "./about.css"
+import ME from "../../assets/me_about.JPEG"
+import {FaAward} from "react-icons/fa"
+import {FiUsers} from "react-icons/fi"
+import {VscFolderLibrary} from "react-icons/vsc"
 
 const About = () => {
   return (
-    <section id='about'>
+    <section id="about">
 
       <h5>Get To Know</h5>
       <h2>About Me</h2>
@@ -29,25 +29,25 @@ const About = () => {
 
           <div className="about__cards">
 
-            <article className='about__card'>
+            <article className="about__card">
 
-              <FaAward className='about__icon'/>
+              <FaAward className="about__icon"/>
               <h5>Experience</h5>
               <small>4+ Years Learning</small>
 
             </article>
 
-            <article className='about__card'>
+            <article className="about__card">
 
-              <FiUsers className='about__icon'/>
+              <FiUsers className="about__icon"/>
               <h5>Clients</h5>
               <small>Never Enough</small>
 
             </article>
 
-            <article className='about__card'>
+            <article className="about__card">
 
-              <VscFolderLibrary className='about__icon'/>
+              <VscFolderLibrary className="about__icon"/>
               <h5>Projects</h5>
               <small>Too Much</small>
 
@@ -61,7 +61,7 @@ const About = () => {
 
           </p>
 
-          <a href="#contact" className='btn btn-primary'>Let's Talk</a>
+          <a href="#contact" className="btn btn-primary">Let's Talk</a>
 
         </div>
 

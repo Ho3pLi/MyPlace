@@ -1,7 +1,7 @@
-import React from 'react'
-import {BsLinkedin} from 'react-icons/bs'
-import {FaGithub} from 'react-icons/fa'
-import {FiGitlab} from 'react-icons/fi'
+import React from "react"
+import {BsLinkedin} from "react-icons/bs"
+import {FaGithub} from "react-icons/fa"
+import {FiGitlab} from "react-icons/fi"
 
 const HeaderSocial = () => {
   return (
