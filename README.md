@@ -1,70 +1,100 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MyLifeBLike - a ReactJS based website
 
-## Available Scripts
+**Italian**
 
-In the project directory, you can run:
+Avendo sempre sviluppato siti web con tecnologie "tradizionali", ho deciso di sperimentare
+l'utilizzo di ReactJS per lo sviluppo di un sito web. In questo caso ho sviluppato un
+portfolio e, essendomi trovato bene con la tecnologia, ho implementato anche quello che
+sarà il mio blog.
 
-### `npm start`
+Il portfolio è composto da 7 sezioni:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Header, About, Experience, Services, Blog(preview), Contact, Footer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Insomma, un "semplice" portfolio. E' presente anche una navbar per navigare all'interno del
+portfolio e altre navbar "globali" che vengono mostrate in altre occasioni.
 
-### `npm test`
+Per ogni dubbio o difficoltà non esitate a contattarmi.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**English**
 
-### `npm run build`
+Having always developed websites with "traditional" technologies, I decided to experiment
+the use of ReactJS for the development of a website. In this case I have developed a
+portfolio and, having got along well with the technology, I have also implemented what
+will be my blog.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The portfolio consists of 7 sections:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Header, About, Experience, Services, Blog (preview), Contact, Footer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In short, a "simple" portfolio. There is also a navbar to navigate inside the
+portfolio and other "global" navbars that are shown on other occasions.
 
-### `npm run eject`
+For any doubt or difficulty do not hesitate to contact me.
+## Badges
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![GitHub last commit](https://img.shields.io/github/last-commit/Ho3pLi/MyPlace)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fmylifeblike.netlify.app%2F)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![GitHub repo size](https://img.shields.io/github/repo-size/Ho3pLi/MyPlace)
 
-## Learn More
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e2b75e4b61e54e00996a5db9e0a9f662)](https://www.codacy.com/gh/Ho3pLi/MyPlace/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Ho3pLi/MyPlace&amp;utm_campaign=Badge_Grade)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Demo
 
-### Code Splitting
+https://mylifeblike.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Requirements
 
-### Analyzing the Bundle Size
+- Node (v16.16.0)
+- VS Code (optional)
+## Installation & Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Italian**
 
-### Making a Progressive Web App
+Per scaricare e usare il sito web bisogna seguire pochi e semplici passaggi.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Seguirò la procedura con VS code ma questi passaggi possono essere effettuati anche tramite un semplice terminale.
 
-### Advanced Configuration
+- Scaricate il repo sul vostro pc (git clone oppure semplicemente lo zip)
+- Aprite il progetto in VS Code
+- Nel terminale di VS Code lanciate il comando ```npm i``` per installare le dipendenze necessarie al funzionamento
+- Dopodichè potrete lanciare il comando ```npm start``` per avviare il sito web in locale
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**English**
 
-### Deployment
+To download and use the website you need to follow a few simple steps.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+I will follow the procedure with VS code but these steps can also be done through a simple terminal.
 
-### `npm run build` fails to minify
+- Download the repo on your pc (git clone or simply the zip)
+- Open the project in VS Code
+- In the VS Code terminal run the command ```npm i``` to install the dependencies necessary for the operation
+- After that you can run the command ```npm start``` to start the website locally
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions are always welcome(!), but..
+
+..not all of them, being my personal website / blog I don't want to be upset.
+
+If you want to optimize, or fix errors or bugs, you are welcome!
+
+## Support
+
+For support, email daniele.barile.lavoro@gmail.com or just open an issue.
+
+
+## License
+
+[GPL v3](https://choosealicense.com/licenses/gpl-3.0/)
+
+
+## Authors
+
+- [@Ho3pLi](https://www.github.com/Ho3pLi)
+
