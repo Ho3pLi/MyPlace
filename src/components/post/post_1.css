@@ -1,0 +1,31 @@
+.post__container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.post__banner{
+
+  border-radius: 1.5rem;
+  overflow: hidden;
+  width: 25%;
+  height: 25%;
+  display: block;
+  margin: 1rem auto;
+}
+
+.post__content{
+
+  
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1024px) {
+  
+}
+
+@media screen and (max-width: 600px) {
+
+  
+}
