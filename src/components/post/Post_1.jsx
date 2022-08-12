@@ -1,5 +1,6 @@
 import React from "react"
 import "./post_1.css"
+import Giscus from "../giscus/Giscus"
 import POST1 from "../../assets/MyFirstPostBn.png"
 import ME from "../../assets/Me_square.jpg"
 
@@ -37,6 +38,8 @@ function Post_1() {
         <hr />
 
         <img src={ME} alt="Me" className="MeFooterBlog"/> <p className="post__footer">Personal blog of Daniele Barile. I'm a fullstack developer, i also have a strong interest in cybersecurity and pentesting.</p>
+
+        <div className="comments"><Giscus/></div>
 
       </div>
 
