@@ -10,7 +10,6 @@ export default function MyApp() {
       categoryId="DIC_kwDOHki-Ds4CQxTd"
       mapping="pathname"
       strict="0"
-      term="Welcome to @giscus/react component!"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
