@@ -52,7 +52,7 @@
   border-radius: 0.5rem;
   width: 50%;
   display: block;
-  margin: 2vh 0 0 13vw;
+  margin: 2vh 0 10vh 13vw;
 }
 
 .post__content p{
@@ -83,6 +83,17 @@
 
   font-size: medium;
   margin: 4vh 0 10vh 5vw;
+}
+
+.post__content a.post__link-next{
+
+  margin: 0 0 0 34vw;
+}
+
+.post__content a.post__link-next:hover{
+
+  border-bottom: 1px dashed white;
+  transition: 0.3s ease-in-out 0s;
 }
 
 /* Media queries */
