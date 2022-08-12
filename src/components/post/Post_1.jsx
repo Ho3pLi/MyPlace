@@ -12,7 +12,7 @@ const Post_1 = () => {
   return (
     <div className="container post__container">
 
-      <h1 className="$">$<a className="blinkItem">_</a> Daniele's Blog</h1>
+      <a href="/" onClick={() => {navigate("/")}} className="nothing"><h1 className="">$<a className="blinkItem">_</a> Daniele's Blog</h1></a>
       
       <div className="post__banner">
 

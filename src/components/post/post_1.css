@@ -17,6 +17,12 @@
 .post__container a.blinkItem{
   animation: blinker 1s linear infinite;
   opacity: 1;
+  color: var(--color-white);
+}
+
+.post__container a.nothing{
+  color: var(--color-white);
+  cursor: default;  
 }
 
 .post__banner{
