@@ -46,7 +46,6 @@ const App = () => {
             <Route path="/Blog/buymeanr6please" element={
               <>
                 <Post1/>
-                <NavG/>
               </>
             }/>
           </Routes>
