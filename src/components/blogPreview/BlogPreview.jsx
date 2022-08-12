@@ -3,12 +3,6 @@ import "./blogPreview.css"
 import Data from "../blog/Data"
 import {useNavigate} from "react-router-dom"
 
-/*
-const old = Data.length - 2
-const mid = Data.length - 1       pensavo fosse più semplice aaaaa
-const last = Data.length
-*/
-
 const BlogPreview = () => {
 
   let navigate = useNavigate()
