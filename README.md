@@ -42,9 +42,6 @@ For any doubt or difficulty do not hesitate to contact me.
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Ho3pLi/MyPlace)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e2b75e4b61e54e00996a5db9e0a9f662)](https://www.codacy.com/gh/Ho3pLi/MyPlace/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Ho3pLi/MyPlace&amp;utm_campaign=Badge_Grade)
-
-
 ## Demo
 
 https://mylifeblike.netlify.app/
