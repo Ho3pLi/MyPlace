@@ -44,7 +44,7 @@ For any doubt or difficulty do not hesitate to contact me.
 
 ## Demo
 
-https://mylifeblike.netlify.app/
+www.mylifeblike.com
 
 ## Requirements
 
