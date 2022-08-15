@@ -17,14 +17,6 @@
   --container-width-sm: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
 #light{
   --color-bg: #4e4f50; /* #1f1f38 */
   --color-bg-variant: #746c70; /* #2c2c6c */
@@ -43,12 +35,21 @@ html {
   --color-light: rgb(255 255 255 / 60%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 body{
   font-family: Poppins, sans-serif;
   background: var(--color-bg);
   color: var(--color-white);
   line-height: 1.7; /* distanza tra le macroaree */
   background-image: none;
+  transition: var(--transition);
 }
 
 /* General */
@@ -79,15 +80,18 @@ section > h5,
 section > h6 {
   text-align: center;
   color: var(--color-light);
+  transition: var(--transition);
 }
 
 section > h2 {
   color: var(--color-primary);
+  transition: var(--transition);
   margin-bottom: 3rem;
 }
 
 .text-light {
   color: var(--color-light);
+  transition: var(--transition);
 }
 
 a {
@@ -114,11 +118,13 @@ a:hover {
   background-color: var(--color-white);
   color: var(--color-bg);
   border-color: transparent;
+  transition: var(--transition);
 }
 
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-bg);
+  transition: var(--transition);
 }
 
 img {
