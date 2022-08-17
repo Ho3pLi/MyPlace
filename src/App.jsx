@@ -1,13 +1,11 @@
-import React from "react"
+import React, { createContext, useState, useEffect } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { createContext } from "react"
-import { useState, useEffect } from "react"
+/*import ReactSwitch from "react-switch"*/
 import Data from "./components/blog/Data"
 import Header from "./components/header/Header"
 import Nav from "./components/nav/Nav"
 import NavG from "./components/navG/NavG"
 import NavGG from "./components/navGG/NavGG"
-import Switch from "./components/switch/Switch"
 import About from "./components/about/About"
 import Experience from "./components/experience/Experience"
 import Services from "./components/services/Services"
@@ -20,23 +18,28 @@ import Post1 from "./components/post/Post_1"
 import SearchBar from "./components/searchBar/SearchBar"
 
 
-export const ThemeContext = createContext(null)
+/*export const ThemeContext = createContext(null)*/
 
 const App = () => {
   
-  const [theme, setTheme] = useState("light")
+  /*const [theme, setTheme] = useState("dark")
 
-  useEffect(() => {document.documentElement.setAttribute("id", theme)}, [theme])
+  const toggleTheme = () => {
+
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
+
+  useEffect(() => {document.documentElement.setAttribute("id", theme)}, [theme])*/
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    /*<ThemeContext.Provider value={{theme, toggleTheme}}>*/
       <Router>
           <Routes>
             <Route path="/" element={
               <>
                 <Header/>
                 <Nav/>
-                <Switch/>
+                {/*<ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch"/>*/}
                 <About/>
                 <Experience/>
                 <Services/>
@@ -49,26 +52,26 @@ const App = () => {
               <>
                 <Blog/>
                 {/*<SearchBar placeholder="Search in the Blog.." data={Data}/>*/}
-                <Switch/>
+                {/*<ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch"/>*/}
                 <NavG/>
               </>
             }/>
             <Route path="*" element={
               <>
                 <Error/>
-                <Switch/>
+                {/*<ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch"/>*/}
                 <NavGG/>
               </>
             }/>
             <Route path="/Blog/buymeanr6please" element={
               <>
                 <Post1/>
-                <Switch/>
+                {/*<ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch"/>*/}
               </>
             }/>
           </Routes>
       </Router>
-    </ThemeContext.Provider>
+    /*</ThemeContext.Provider>*/
     )
 }
 
