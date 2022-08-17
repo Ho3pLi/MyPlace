@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { createContext } from "react"
 import { useState, useEffect } from "react"
+import Data from "./components/blog/Data"
 import Header from "./components/header/Header"
 import Nav from "./components/nav/Nav"
 import NavG from "./components/navG/NavG"
@@ -16,6 +17,7 @@ import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import Error from "./components/error/Error"
 import Post1 from "./components/post/Post_1"
+import SearchBar from "./components/searchBar/SearchBar"
 
 
 export const ThemeContext = createContext(null)
@@ -46,6 +48,7 @@ const App = () => {
             <Route path="/Blog" element={
               <>
                 <Blog/>
+                {/*<SearchBar placeholder="Search in the Blog.." data={Data}/>*/}
                 <Switch/>
                 <NavG/>
               </>
