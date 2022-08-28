@@ -15,6 +15,7 @@ import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import Error from "./components/error/Error"
 import Post1 from "./components/post/Post_1"
+import Post2 from "./components/post/Post_2"
 import SearchBar from "./components/searchBar/SearchBar"
 
 
@@ -67,6 +68,11 @@ const App = () => {
               <>
                 <Post1/>
                 {/*<ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch"/>*/}
+              </>
+            }/>
+            <Route path="/Blog/HotShare" element={
+              <>
+                <Post2/>
               </>
             }/>
           </Routes>

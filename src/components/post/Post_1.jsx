@@ -29,14 +29,41 @@ const Post_1 = () => {
 
       <div className="post__content">
 
-        <p>Hi, welcome to my blog. My name's Daniele Barile and I aspire to become an excellent Fullstack Developer. 
-        I'd say that I'm still "at the beginning" but actually I've got 4 years of experience in application development.
-        I'm interested almost in everything: client development, server development, frontend, and backend.
-        I like to improve myself and to play with unknown technologies.
-        In this blog I'll publish articles of any kind, all about (or almost) what wanders in my head.
-        This site was my first experiment with ReactJS (very interesting);  if you want to take a look at the code, you can find a button in the article preview that will bring you to the repo.
-        At this point, I think I've said it all for now.
-        Happy coding :)
+        <p>
+          
+          Hi, welcome to my blog. 
+          
+          <br />
+          
+          My name's Daniele Barile and I aspire to become an excellent Fullstack Developer. 
+
+          <br />
+
+          I'd say that I'm still "at the beginning" but actually I've got 4 years of experience in application development.
+        
+          <br />
+        
+          I'm interested almost in everything: client development, server development, frontend, and backend.
+        
+          <br />
+        
+          I like to improve myself and to play with unknown technologies.
+        
+          <br />
+        
+          In this blog I'll publish articles of any kind, all about (or almost) what wanders in my head.
+        
+          <br />
+        
+          This site was my first experiment with ReactJS (very interesting);  if you want to take a look at the code, you can find a button in the article preview that will bring you to the repo.
+        
+          <br />
+        
+          At this point, I think I've said it all for now.
+          
+          <br />
+          
+          Happy coding :)
         </p>
 
         <hr />
@@ -45,7 +72,7 @@ const Post_1 = () => {
 
         <div className="comments"><Giscus/></div>
 
-        <a href="/" onClick={() => {navigate("/")}} className="post__link-next">Next →</a>
+        <a href="/Blog/HotShare" onClick={() => {navigate("/Blog/HotShare")}} className="post__link-next">Next →</a>
 
       </div>
 
