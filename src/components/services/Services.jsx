@@ -106,7 +106,7 @@ const Services = () => {
             </li>
             <li>
               <BiCheck className="service__list-icon"/>
-              <p> or assemble a computer, only if you don't give me a 3090, otherwise I feel poor </p>
+              <p> or assemble a computer, only if you don't give me a 4090, otherwise I feel poor </p>
             </li>
 
           </ul>
