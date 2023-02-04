@@ -1,9 +1,17 @@
 import React from "react"
 import POST1 from "../../assets/MyFirstPostBn.png"
 import POST2 from "../../assets/MySecondPostBn.png"
+import POST3 from "../../assets/MyThirdPostBn.png"
 
 const Data = [
 
+  {
+    id: 3,
+    image: POST3,
+    title: "Update 02/2023",
+    github: "/notfound",
+    read: "/Blog/Update022023"
+  },
   {
     id: 2,
     image: POST2,

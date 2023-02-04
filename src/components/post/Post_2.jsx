@@ -5,7 +5,7 @@ import POST2 from "../../assets/MySecondPostBn.png"
 import ME from "../../assets/Me_square.jpg"
 import {useNavigate} from "react-router-dom"
 
-const Post_1 = () => {
+const Post_2 = () => {
 
   let navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const Post_1 = () => {
       
       <div className="post__banner">
 
-        <img src={POST2} alt="MyFirstPost" />
+        <img src={POST2} alt="MySecondPost" />
 
       </div>
 
@@ -73,4 +73,4 @@ const Post_1 = () => {
   )
 }
 
-export default Post_1
+export default Post_2

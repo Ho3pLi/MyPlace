@@ -16,6 +16,7 @@ import Footer from "./components/footer/Footer"
 import Error from "./components/error/Error"
 import Post1 from "./components/post/Post_1"
 import Post2 from "./components/post/Post_2"
+import Post3 from "./components/post/Post_3"
 import SearchBar from "./components/searchBar/SearchBar"
 
 
@@ -73,6 +74,11 @@ const App = () => {
             <Route path="/Blog/HotShare" element={
               <>
                 <Post2/>
+              </>
+            }/>
+            <Route path="/Blog/Update022023" element={
+              <>
+                <Post3/>
               </>
             }/>
           </Routes>
