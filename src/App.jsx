@@ -17,6 +17,7 @@ import Error from "./components/error/Error"
 import Post1 from "./components/post/Post_1"
 import Post2 from "./components/post/Post_2"
 import Post3 from "./components/post/Post_3"
+import Post4 from "./components/post/Post_4"
 import SearchBar from "./components/searchBar/SearchBar"
 
 
@@ -79,6 +80,11 @@ const App = () => {
             <Route path="/Blog/Update022023" element={
               <>
                 <Post3/>
+              </>
+            }/>
+            <Route path="/Blog/Update042023" element={
+              <>
+                <Post4/>
               </>
             }/>
           </Routes>
