@@ -2,9 +2,17 @@ import React from "react"
 import POST1 from "../../assets/MyFirstPostBn.png"
 import POST2 from "../../assets/MySecondPostBn.png"
 import POST3 from "../../assets/MyThirdPostBn.png"
+import POST4 from "../../assets/MyFourthPostBn.png"
 
 const Data = [
 
+  {
+    id: 4,
+    image: POST4,
+    title: "Update 04/2023",
+    github: "https://github.com/Ho3pLi/AternosDiscordBot",
+    read: "/Blog/Update042023"
+  },
   {
     id: 3,
     image: POST3,

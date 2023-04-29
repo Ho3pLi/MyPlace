@@ -22,7 +22,7 @@ const Post_4 = () => {
 
       <div className="post__header">
 
-      <small>April 29, 2023 • 2 min{/* TO-DO: devo mettere il coso del caffè */}</small>
+      <small>April 29, 2023 • 4 min{/* TO-DO: devo mettere il coso del caffè */}</small>
       <h2>Update 04/2023</h2>
       
       </div>
@@ -45,7 +45,7 @@ const Post_4 = () => {
             
             <br />
             
-            I'll just leave you the links to the download from Google Play (https://play.google.com/store/apps/details?id=com.internet_checker).
+            I'll just leave you the links to the download from <a href="https://play.google.com/store/apps/details?id=com.internet_checker" target="_blank">Google Play</a>.
 
             <br />
             
@@ -57,7 +57,7 @@ const Post_4 = () => {
             
             <br />
             
-            For those who are curious, I leave the link to the repository in the post button. For those who want to use the bot instead, just look for it on top.gg with the name "AternoServerController".
+            For those who are curious, I leave the link to the repository in the post button. For those who want to use the bot instead, just look for it on <a href="https://top.gg" target="_blank">top.gg</a> with the name "AternoServerController".
             
             <br />
             
