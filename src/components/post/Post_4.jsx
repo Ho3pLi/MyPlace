@@ -89,7 +89,7 @@ const Post_4 = () => {
 
       <a href="/Blog/Update022023" onClick={() => {navigate("/Blog/Update022023")}} className="post__link-previous">← Previous</a>
 
-      <a href="/notfound" onClick={() => {navigate("/notfound")}} className="post__link-next">Next →</a>
+      <a href="/Blog/UpdatePostSummer" onClick={() => {navigate("/Blog/UpdatePostSummer")}} className="post__link-next">Next →</a>
 
       </div>
 
