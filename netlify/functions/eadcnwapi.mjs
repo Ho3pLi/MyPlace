@@ -34,6 +34,10 @@ export default async (req, context) => {
     console.log('response hash: ',responseHash);  
     console.log('END');
 
+    if (responseHash.charCodeAt(0) === 0xFEFF) {
+      responseHash.slice(1);
+    }
+
     return new Response(JSON.stringify({challengeResponse: responseHash}), {headers: {'Content-Type': 'application/json'}});
   } catch (error) {
     console.log({ error });
