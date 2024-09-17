@@ -44,6 +44,6 @@ export default async (req, context) => {
   }
 };
 
-export const config = {
-    path: "/api/eadcnwapi"
-};
+// export const config = {
+//     path: "/api/eadcnwapi"
+// };
