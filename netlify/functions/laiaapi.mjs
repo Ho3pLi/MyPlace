@@ -1,5 +1,4 @@
-// import puppeteer from 'puppeteer';
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
 export default async (req, context) => {
   try {
