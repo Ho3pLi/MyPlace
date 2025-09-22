@@ -7,6 +7,10 @@ const BlogPreview = () => {
 
   let navigate = useNavigate()
 
+  const recentPosts = [...Data]
+    .sort((a, b) => b.id - a.id)
+    .slice(0, 3)
+
   return (
     <section id="blogPreview">
     
@@ -18,7 +22,7 @@ const BlogPreview = () => {
 
       {
 
-        Data.slice(-3).map(({id, image, title, github, read}) => {
+        recentPosts.map(({id, image, title, github, read}) => {
 
           return(
             <article key={id} className="blogPreview__item">
