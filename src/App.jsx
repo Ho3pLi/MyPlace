@@ -19,6 +19,7 @@ import Post2 from "./components/post/Post_2"
 import Post3 from "./components/post/Post_3"
 import Post4 from "./components/post/Post_4"
 import Post5 from "./components/post/Post_5"
+import Post6 from "./components/post/Post_6"
 import SearchBar from "./components/searchBar/SearchBar"
 
 
@@ -91,6 +92,11 @@ const App = () => {
             <Route path="/Blog/UpdatePostSummer" element={
               <>
                 <Post5/>
+              </>
+            }/>
+            <Route path="/Blog/TwoYearsLater" element={
+              <>
+                <Post6/>
               </>
             }/>
           </Routes>
