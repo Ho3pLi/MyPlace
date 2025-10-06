@@ -1,54 +1,11 @@
-import React from "react"
-import POST6 from "../../assets/MySixthPostBn.svg"
-import POST5 from "../../assets/MyFifthPostBn.png"
-import POST4 from "../../assets/MyFourthPostBn.png"
-import POST3 from "../../assets/MyThirdPostBn.png"
-import POST2 from "../../assets/MySecondPostBn.png"
-import POST1 from "../../assets/MyFirstPostBn.png"
+import posts from "../post/postsData"
 
-const Data = [
-  {
-    id: 6,
-    image: POST6,
-    title: "Two Years Later… Still Here!",
-    github: "/notfound",
-    read: "/Blog/TwoYearsLater"
-  },
-  {
-    id: 5,
-    image: POST5,
-    title: "Update Post Summer",
-    github: "/notfound",
-    read: "/Blog/UpdatePostSummer"
-  },
-  {
-    id: 4,
-    image: POST4,
-    title: "Update 04/2023",
-    github: "https://github.com/Ho3pLi/AternosDiscordBot",
-    read: "/Blog/Update042023"
-  },
-  {
-    id: 3,
-    image: POST3,
-    title: "Update 02/2023",
-    github: "/notfound",
-    read: "/Blog/Update022023"
-  },
-  {
-    id: 2,
-    image: POST2,
-    title: "HotShare",
-    github: "/notfound",
-    read: "/Blog/HotShare"
-  },
-  {
-    id: 1,
-    image: POST1,
-    title: "My first post!",
-    github: "https://github.com/Ho3pLi/MyPlace",
-    read: "/Blog/buymeanr6please"
-  }
-]
+const Data = posts.map(({ id, banner, title, github, slug }) => ({
+  id,
+  image: banner,
+  title,
+  github,
+  read: `/Blog/${slug}`
+}))
 
 export default Data
