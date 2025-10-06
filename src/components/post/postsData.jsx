@@ -18,7 +18,7 @@ const posts = [
     github: "/notfound",
     body: (
       <p>
-        It has been a while -- more than two years, in fact -- since I last wrote here. The funny
+        It has been a while (more than two years, in fact) since I last wrote here. The funny
         (and slightly embarrassing) part is that my previous post was all about how I did not want to
         neglect this blog anymore.
         <br />
@@ -37,7 +37,7 @@ const posts = [
         <br />
         With so much going on, the blog kept getting pushed aside. Again. But here I am, ready to give
         it another shot and breathe a little life back into this space. Maybe this time the momentum
-        will stick. Or maybe future me will circle back in another two years to write a similar post --
+        will stick. Or maybe future me will circle back in another two years to write a similar post,
         let us hope not!
         <br />
         <br />
