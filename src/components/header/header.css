@@ -1,4 +1,4 @@
-header {
+.siteHeader {
   height: 100vh;
   padding-top: 7rem;
   overflow: hidden;
@@ -66,13 +66,13 @@ header {
 /* Media queries */
 
 @media screen and (max-width: 1024px) {
-  header {
+  .siteHeader {
     height: 68vh;
   }
 }
 
 @media screen and (max-width: 600px) {
-  header {
+  .siteHeader {
     height: 100vh;
   }
 

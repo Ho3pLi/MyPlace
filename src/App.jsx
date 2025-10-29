@@ -13,6 +13,9 @@ import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import Error from "./components/error/Error"
 import Post from "./components/post/Post"
+import DeveloperTools from "./components/developerTools/DeveloperTools"
+import PrivacyPolicy from "./components/developerTools/PrivacyPolicy"
+import TermsOfService from "./components/developerTools/TermsOfService"
 
 const App = () => {
   return (
@@ -43,6 +46,33 @@ const App = () => {
           }
         />
         <Route path="/Blog/:slug" element={<Post />} />
+        <Route
+          path="/developer-tools"
+          element={
+            <>
+              <NavG />
+              <DeveloperTools />
+            </>
+          }
+        />
+        <Route
+          path="/developer-tools/privacy-policy"
+          element={
+            <>
+              <NavG />
+              <PrivacyPolicy />
+            </>
+          }
+        />
+        <Route
+          path="/developer-tools/terms-of-service"
+          element={
+            <>
+              <NavG />
+              <TermsOfService />
+            </>
+          }
+        />
         <Route
           path="*"
           element={

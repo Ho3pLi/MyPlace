@@ -1,0 +1,113 @@
+.devtools__section {
+  margin-top: 6rem;
+}
+
+.devtools__header {
+  text-align: center;
+  margin-bottom: 2rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.devtools__cta {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.devtools__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.devtools__card {
+  background: var(--color-bg-variant);
+  padding: 1.3rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.devtools__card:hover {
+  border-color: var(--color-primary-variant);
+  background: transparent;
+}
+
+.devtools__card h3 {
+  margin-bottom: 1rem;
+}
+
+.devtools__card ul {
+  padding-left: 1rem;
+}
+
+.devtools__card li {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .devtools__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .devtools__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .devtools__card {
+    margin: 0 1rem;
+  }
+}
+
+/* Privacy Policy - Monochrome formal style */
+.privacy__card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.privacy__monochrome {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+/* Ensure all text inside the policy card is black and readable */
+.privacy__monochrome,
+.privacy__monochrome h1,
+.privacy__monochrome h2,
+.privacy__monochrome h3,
+.privacy__monochrome h4,
+.privacy__monochrome h5,
+.privacy__monochrome h6,
+.privacy__monochrome p,
+.privacy__monochrome li,
+.privacy__monochrome strong,
+.privacy__monochrome em,
+.privacy__monochrome small,
+.privacy__monochrome code,
+.privacy__monochrome a {
+  color: #000 !important;
+}
+
+.privacy__monochrome a {
+  text-decoration: underline;
+}
+
+.privacy__monochrome a:hover {
+  color: #000 !important; /* prevent theme hover from turning white */
+}
+
+/* Restore bullet styles inside the formal card */
+.privacy__monochrome ul { list-style: disc; padding-left: 1.25rem; }
+.privacy__monochrome ol { list-style: decimal; padding-left: 1.25rem; }
+
+.privacy__monochrome em { color: #333 !important; }
