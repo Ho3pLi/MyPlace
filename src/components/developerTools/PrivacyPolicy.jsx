@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
           <p>
             <strong>Daniele Barile</strong><br />
             Rho, Italy<br />
-            Email: <a href="mailto:daniele.barile.lavoro@gmail.com">daniele.barile.lavoro@gmail.com</a>
+            Email: <a href="mailto:daniele.barile@mylifeblike.com">daniele.barile@mylifeblike.com</a>
           </p>
           <p>
             We are committed to protecting your privacy and providing clear
@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
           <p>
             To exercise these rights, contact us at
             {" "}
-            <a href="mailto:daniele.barile.lavoro@gmail.com">daniele.barile.lavoro@gmail.com</a>.
+            <a href="mailto:daniele.barile@mylifeblike.com">daniele.barile@mylifeblike.com</a>.
           </p>
 
           <h3>8. International Use</h3>
@@ -126,4 +126,3 @@ const PrivacyPolicy = () => {
 }
 
 export default PrivacyPolicy
-

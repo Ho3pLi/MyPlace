@@ -88,7 +88,7 @@ const TermsOfService = () => {
           </p>
           <p>
             Daniele Barile<br />
-            Email: <a href="mailto:daniele.barile.lavoro@gmail.com">daniele.barile.lavoro@gmail.com</a>
+            Email: <a href="mailto:daniele.barile@mylifeblike.com">daniele.barile@mylifeblike.com</a>
           </p>
         </article>
       </div>
