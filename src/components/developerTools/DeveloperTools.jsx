@@ -45,7 +45,7 @@ const DeveloperTools = () => {
               Available on the Chrome Web Store.
             </p>
             <p>
-              Link: <a href="https://chrome.google.com/webstore/detail/REPLACE_WITH_ID" target="_blank" rel="noreferrer">Install from Chrome Web Store</a>
+              Link: <a href="https://chromewebstore.google.com/detail/iopaecchbfgonpfdleogegogcolggped?utm_source=item-share-cb" target="_blank" rel="noreferrer">Install from Chrome Web Store</a>
             </p>
           </article>
         </div>
