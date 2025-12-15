@@ -1,6 +1,11 @@
-import ReactDOM from "react-dom"; 
-import App from "./App";
-import './index.css';
+import ReactDOM from "react-dom"
+import App from "./App"
+import "./index.css"
+import { PostsProvider } from "./context/PostsContext"
 
-ReactDOM.render(<App/>, document.querySelector("#root"))
-
+ReactDOM.render(
+  <PostsProvider>
+    <App />
+  </PostsProvider>,
+  document.querySelector("#root")
+)

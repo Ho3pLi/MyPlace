@@ -1,22 +1,53 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { Link, Navigate, useParams } from "react-router-dom"
 import Giscus from "../giscus/Giscus"
 import ME from "../../assets/Me_square.jpg"
-import { getAllPosts, getPostBySlug } from "./postsData"
 import "./Post.css"
+import { usePosts } from "../../context/PostsContext"
 
 const Post = () => {
   const { slug } = useParams()
-  const post = getPostBySlug(slug)
+  const { posts, loading, error } = usePosts()
+
+  const publishedPosts = useMemo(
+    () =>
+      posts
+        .filter((item) => item.status === "published")
+        .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)),
+    [posts]
+  )
+
+  const post = publishedPosts.find((item) => item.slug === slug)
+
+  if (loading) {
+    return <div className="container post__container">Loading post...</div>
+  }
+
+  if (error) {
+    return <div className="container post__container">Failed to load posts: {error}</div>
+  }
 
   if (!post) {
     return <Navigate to="/Blog" replace />
   }
 
-  const posts = getAllPosts()
-  const index = posts.findIndex((item) => item.slug === post.slug)
-  const previous = index < posts.length - 1 ? posts[index + 1] : null
-  const next = index > 0 ? posts[index - 1] : null
+  const index = publishedPosts.findIndex((item) => item.slug === post.slug)
+  const previous = index < publishedPosts.length - 1 ? publishedPosts[index + 1] : null
+  const next = index > 0 ? publishedPosts[index - 1] : null
+
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  })
+
+  const sanitizeContent = (html) =>
+    (html || "")
+      .toString()
+      .replace(/<script.*?>.*?<\/script>/gi, "")
+      .replace(/on\w+=".*?"/gi, "")
+
+  const bodyHtml = sanitizeContent(post.content || post.body || "")
 
   return (
     <div className="container post__container">
@@ -32,13 +63,13 @@ const Post = () => {
 
       <div className="post__header">
         <small>
-          {post.publishedAt} - {post.readTime}
+          {formattedDate} - {post.readTime} min read
         </small>
         <h2>{post.title}</h2>
       </div>
 
       <div className="post__content">
-        {post.body}
+        <div className="post__body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
 
         <hr />
 

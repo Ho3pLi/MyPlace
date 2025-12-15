@@ -1,20 +1,38 @@
 import React, { useMemo, useState } from "react"
 import "./blog.css"
-import Data from "./Data"
 import SearchBar from "../searchBar/SearchBar"
 import { Link } from "react-router-dom"
+import { usePosts } from "../../context/PostsContext"
 
 const Blog = () => {
   const [query, setQuery] = useState("")
+  const { posts, loading, error } = usePosts()
+  const publishedPosts = useMemo(
+    () =>
+      posts
+        .filter((post) => post.status === "published")
+        .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)),
+    [posts]
+  )
 
   const filteredPosts = useMemo(() => {
     if (!query.trim()) {
-      return Data
+      return publishedPosts
     }
 
     const lowered = query.trim().toLowerCase()
-    return Data.filter((post) => post.title.toLowerCase().includes(lowered))
-  }, [query])
+    return publishedPosts.filter((post) => post.title.toLowerCase().includes(lowered))
+  }, [publishedPosts, query])
+
+  const searchData = useMemo(
+    () =>
+      publishedPosts.map((post) => ({
+        id: post.id,
+        title: post.title,
+        read: `/Blog/${post.slug}`
+      })),
+    [publishedPosts]
+  )
 
   return (
     <section id="blog">
@@ -25,7 +43,7 @@ const Blog = () => {
           <h4>..where i write what goes through my mind</h4>
           <SearchBar
             placeholder="Search in the blog..."
-            data={Data}
+            data={searchData}
             value={query}
             onChange={setQuery}
           />
@@ -33,17 +51,19 @@ const Blog = () => {
       </header>
 
       <div className="container blog__container">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map(({ id, image, title, github, read }) => (
+        {loading && <div className="blog__empty">Loading posts...</div>}
+        {error && !loading && <div className="blog__empty">Failed to load posts: {error}</div>}
+        {!loading && !error && filteredPosts.length > 0 ? (
+          filteredPosts.map(({ id, banner, title, github, slug }) => (
             <article key={id} className="blog__item">
               <div className="blog__item-image">
-                <img src={image} alt={title} />
+                <img src={banner} alt={title} />
               </div>
 
               <h3>{title}</h3>
 
               <div className="blog__item-cta">
-                <Link to={read} className="btn btn-primary">
+                <Link to={`/Blog/${slug}`} className="btn btn-primary">
                   Read
                 </Link>
                 <a href={github} className="btn" target="_blank" rel="noreferrer">

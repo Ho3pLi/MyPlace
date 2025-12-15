@@ -1,15 +1,19 @@
-import React from "react"
+import React, { useMemo } from "react"
 import "./blogPreview.css"
-import Data from "../blog/Data"
 import {useNavigate} from "react-router-dom"
+import { usePosts } from "../../context/PostsContext"
 
 const BlogPreview = () => {
 
   let navigate = useNavigate()
+  const { posts } = usePosts()
 
-  const recentPosts = [...Data]
-    .sort((a, b) => b.id - a.id)
-    .slice(0, 3)
+  const recentPosts = useMemo(() => {
+    return posts
+      .filter((post) => post.status === "published")
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+      .slice(0, 3)
+  }, [posts])
 
   return (
     <section id="blogPreview">
@@ -22,14 +26,14 @@ const BlogPreview = () => {
 
       {
 
-        recentPosts.map(({id, image, title, github, read}) => {
+        recentPosts.map(({id, title, github, slug, banner}) => {
 
           return(
             <article key={id} className="blogPreview__item">
 
               <div className="blogPreview__item-image">
               
-                <img src={image} alt={title} />
+                <img src={banner} alt={title} />
                 
               </div>
 
@@ -37,8 +41,8 @@ const BlogPreview = () => {
 
               <div className="blogPreview__item-cta">
 
-                <a href={read} className="btn btn-primary">Read</a>
-                <a href={github} className="btn" target="_blank">Github</a>
+                <a href={`/Blog/${slug}`} className="btn btn-primary">Read</a>
+                <a href={github} className="btn" target="_blank" rel="noreferrer">Github</a>
 
               </div>
 
