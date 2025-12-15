@@ -22,6 +22,7 @@ const Footer = () => {
         <li><a href="#services">Services</a></li>
         <li><a href="/Blog" onClick={() => {navigate("/Blog")}}>Blog</a></li>
         <li><a href="/developer-tools" onClick={() => {navigate("/developer-tools")}}>Developer Tools</a></li>
+        <li><a href="/statly" onClick={() => {navigate("/statly")}}>Statly</a></li>
         <li><a href="#contact">Contact</a></li>
 
       </ul>

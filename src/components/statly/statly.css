@@ -1,0 +1,144 @@
+.statly {
+  margin-top: 6rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--color-light);
+}
+
+.statly__hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statly__lede {
+  max-width: 720px;
+  color: var(--color-light);
+}
+
+.statly__cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.statly__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.statly__card {
+  background: var(--color-bg-variant);
+  padding: 1.4rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.statly__card:hover {
+  border-color: var(--color-primary-variant);
+  background: transparent;
+}
+
+.statly__pillbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.statly__pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.statly__section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.statly__section--alt {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.statly__section-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.statly__bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.statly__bullets span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.statly__list {
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.statly__media {
+  width: 100%;
+}
+
+.statly__media-frame {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.statly__media-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.statly__media-frame figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-light);
+}
+
+.statly__cta-block {
+  background: var(--color-bg-variant);
+  padding: 1.6rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .statly__hero {
+    margin-bottom: 2rem;
+  }
+  .statly__section {
+    grid-template-columns: 1fr;
+  }
+}

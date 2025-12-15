@@ -16,6 +16,7 @@ import Post from "./components/post/Post"
 import DeveloperTools from "./components/developerTools/DeveloperTools"
 import PrivacyPolicy from "./components/developerTools/PrivacyPolicy"
 import TermsOfService from "./components/developerTools/TermsOfService"
+import Statly from "./components/statly/Statly"
 
 const App = () => {
   return (
@@ -46,6 +47,15 @@ const App = () => {
           }
         />
         <Route path="/Blog/:slug" element={<Post />} />
+        <Route
+          path="/statly"
+          element={
+            <>
+              <NavG />
+              <Statly />
+            </>
+          }
+        />
         <Route
           path="/developer-tools"
           element={
