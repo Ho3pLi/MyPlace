@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
+import { fetchPosts as fetchPostsFromApi } from "../api/posts"
 
 const PostsContext = createContext(null)
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4000"
 
 const sortByDateDesc = (list) =>
   list.slice().sort((a, b) => new Date(b.publishedAt || b.updatedAt) - new Date(a.publishedAt || a.updatedAt))
@@ -15,11 +15,7 @@ export const PostsProvider = ({ children }) => {
     setLoading(true)
     setError("")
     try {
-      const response = await fetch(`${API_URL}/posts`)
-      if (!response.ok) {
-        throw new Error(`Unable to load posts (${response.status})`)
-      }
-      const data = await response.json()
+      const data = await fetchPostsFromApi()
       setPosts(sortByDateDesc(data))
     } catch (err) {
       setError(err.message || "Failed to load posts")

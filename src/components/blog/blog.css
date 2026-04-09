@@ -43,6 +43,11 @@
   margin: 1.2rem 0 2rem;
 }
 
+.blog__item-excerpt {
+  margin: -1rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .blog__item-cta {
   display: flex;
   gap: 1rem;

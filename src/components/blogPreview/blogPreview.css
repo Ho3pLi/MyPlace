@@ -32,10 +32,21 @@
   font-size: 1.1rem;
 }
 
+.blogPreview__item-excerpt {
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
 .blogPreview__item-cta {
   display: flex;
   gap: 0.75rem;
   margin-top: auto;
+}
+
+.blogPreview__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 #blogPreview h6:hover {

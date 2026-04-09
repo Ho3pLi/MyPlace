@@ -7,31 +7,24 @@ import { usePosts } from "../../context/PostsContext"
 const Blog = () => {
   const [query, setQuery] = useState("")
   const { posts, loading, error } = usePosts()
-  const publishedPosts = useMemo(
-    () =>
-      posts
-        .filter((post) => post.status === "published")
-        .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)),
-    [posts]
-  )
 
   const filteredPosts = useMemo(() => {
     if (!query.trim()) {
-      return publishedPosts
+      return posts
     }
 
     const lowered = query.trim().toLowerCase()
-    return publishedPosts.filter((post) => post.title.toLowerCase().includes(lowered))
-  }, [publishedPosts, query])
+    return posts.filter((post) => post.title.toLowerCase().includes(lowered))
+  }, [posts, query])
 
   const searchData = useMemo(
     () =>
-      publishedPosts.map((post) => ({
+      posts.map((post) => ({
         id: post.id,
         title: post.title,
         read: `/Blog/${post.slug}`
       })),
-    [publishedPosts]
+    [posts]
   )
 
   return (
@@ -51,29 +44,36 @@ const Blog = () => {
       </header>
 
       <div className="container blog__container">
-        {loading && <div className="blog__empty">Loading posts...</div>}
-        {error && !loading && <div className="blog__empty">Failed to load posts: {error}</div>}
-        {!loading && !error && filteredPosts.length > 0 ? (
-          filteredPosts.map(({ id, banner, title, github, slug }) => (
+        {loading ? (
+          <div className="blog__empty">Loading posts...</div>
+        ) : error ? (
+          <div className="blog__empty">Failed to load posts: {error}</div>
+        ) : filteredPosts.length > 0 ? (
+          filteredPosts.map(({ id, banner, title, github, slug, excerpt }) => (
             <article key={id} className="blog__item">
               <div className="blog__item-image">
                 <img src={banner} alt={title} />
               </div>
 
               <h3>{title}</h3>
+              {excerpt && <p className="blog__item-excerpt">{excerpt}</p>}
 
               <div className="blog__item-cta">
                 <Link to={`/Blog/${slug}`} className="btn btn-primary">
                   Read
                 </Link>
-                <a href={github} className="btn" target="_blank" rel="noreferrer">
-                  Github
-                </a>
+                {github && (
+                  <a href={github} className="btn" target="_blank" rel="noreferrer">
+                    Github
+                  </a>
+                )}
               </div>
             </article>
           ))
         ) : (
-          <div className="blog__empty">No posts match your search.</div>
+          <div className="blog__empty">
+            {posts.length === 0 ? "No published posts yet." : "No posts match your search."}
+          </div>
         )}
       </div>
     </section>

@@ -1,16 +1,16 @@
 import React, { useMemo } from "react"
 import "./blogPreview.css"
-import {useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { usePosts } from "../../context/PostsContext"
 
 const BlogPreview = () => {
 
   let navigate = useNavigate()
-  const { posts } = usePosts()
+  const { posts, loading, error } = usePosts()
 
   const recentPosts = useMemo(() => {
     return posts
-      .filter((post) => post.status === "published")
+      .slice()
       .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
       .slice(0, 3)
   }, [posts])
@@ -24,9 +24,13 @@ const BlogPreview = () => {
 
      <div className="container blogPreview__container">
 
+      {loading && <p className="blogPreview__empty">Loading posts...</p>}
+      {!loading && error && <p className="blogPreview__empty">Failed to load posts: {error}</p>}
+      {!loading && !error && (
+        <>
       {
 
-        recentPosts.map(({id, title, github, slug, banner}) => {
+        recentPosts.map(({id, title, github, slug, banner, excerpt}) => {
 
           return(
             <article key={id} className="blogPreview__item">
@@ -38,11 +42,12 @@ const BlogPreview = () => {
               </div>
 
               <h3>{title}</h3>
+              {excerpt && <p className="blogPreview__item-excerpt">{excerpt}</p>}
 
               <div className="blogPreview__item-cta">
 
-                <a href={`/Blog/${slug}`} className="btn btn-primary">Read</a>
-                <a href={github} className="btn" target="_blank" rel="noreferrer">Github</a>
+                <Link to={`/Blog/${slug}`} className="btn btn-primary">Read</Link>
+                {github && <a href={github} className="btn" target="_blank" rel="noreferrer">Github</a>}
 
               </div>
 
@@ -53,6 +58,10 @@ const BlogPreview = () => {
         })
 
       }
+
+      {recentPosts.length === 0 && <p className="blogPreview__empty">No published posts yet.</p>}
+        </>
+      )}
 
      </div>
 

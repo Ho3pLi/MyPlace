@@ -5,6 +5,7 @@ import Nav from "./components/nav/Nav"
 import NavG from "./components/navG/NavG"
 import NavGG from "./components/navGG/NavGG"
 import About from "./components/about/About"
+import Admin from "./components/admin/Admin"
 import Experience from "./components/experience/Experience"
 import Services from "./components/services/Services"
 import BlogPreview from "./components/blogPreview/BlogPreview"
@@ -36,6 +37,10 @@ const App = () => {
               <Footer />
             </>
           }
+        />
+        <Route
+          path="/admin"
+          element={<Admin />}
         />
         <Route
           path="/Blog"

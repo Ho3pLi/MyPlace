@@ -50,6 +50,12 @@
   display: block;
 }
 
+.post__excerpt {
+  margin: 1rem 13vw 0;
+  max-width: 50rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .post__content {
   background-color: transparent;
   border-radius: 0.5rem;
@@ -60,6 +66,58 @@
 
 .post__content p {
   font-size: 1.3rem;
+}
+
+.post__body h1,
+.post__body h2,
+.post__body h3,
+.post__body h4,
+.post__body h5,
+.post__body h6 {
+  margin: 2rem 0 1rem;
+}
+
+.post__body p,
+.post__body ul,
+.post__body ol,
+.post__body blockquote {
+  margin: 0 0 1.25rem;
+}
+
+.post__body ul,
+.post__body ol {
+  padding-left: 1.5rem;
+}
+
+.post__body a {
+  color: var(--color-primary);
+}
+
+.post__body blockquote {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.post__body code {
+  font-family: "Consolas", "Courier New", monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+}
+
+.post__code-block {
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.post__code-block code {
+  background: transparent;
+  padding: 0;
 }
 
 .post__container hr {
@@ -114,7 +172,8 @@
   }
 
   .post__header h2,
-  .post__header small {
+  .post__header small,
+  .post__excerpt {
     margin-left: 0;
     text-align: center;
   }
