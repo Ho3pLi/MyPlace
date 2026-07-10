@@ -1,53 +1,48 @@
-const crypto = require('crypto');
+import crypto from "node:crypto"
 
-export default async (req, context) => {
-  try {
-    console.log('START');
-    console.log('req method: ',req.method);
-    
-    if (req.method !== 'GET') {
-      return new Response(JSON.stringify({ message: 'Some error occurred. Check the env file for the understanding the error code. Error code: aicokj' }));
+function getEnv(name) {
+  return process.env[name] || globalThis.Netlify?.env?.get(name) || ""
+}
+
+function json(payload, status = 200) {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: {
+      "Content-Type": "application/json"
     }
-    const reqUrl = req.url;
-    console.log('req url: ',reqUrl);
-    const url = new URL(reqUrl);
-    console.log('URL: ',url);
-    const challengeCode = url.searchParams.get('challenge_code');
-    console.log('challenge code: ',challengeCode);  
+  })
+}
+
+export default async (req) => {
+  try {
+    if (req.method !== "GET") {
+      return json({ message: "Method not allowed" }, 405)
+    }
+
+    const url = new URL(req.url)
+    const challengeCode = url.searchParams.get("challenge_code")
 
     if (!challengeCode) {
-      return new Response(JSON.stringify({ message: 'Some error occurred. Check the env file for the understanding the error code. Error code: awdubo' }));
+      return json({ message: "Missing challenge_code" }, 400)
     }
 
-    const verificationCode = Netlify.env.get('verificationCode');
-    console.log('verification code: ',verificationCode);
-    const endpoint = Netlify.env.get('endpoint');
-    console.log('endpoint: ',endpoint);
-    const hash = crypto.createHash('sha256');
-    console.log('hash: ',hash);
-    hash.update(challengeCode);
-    hash.update(verificationCode);
-    hash.update(endpoint);
-    console.log('HASH UPDATE DONE');
+    const verificationCode = getEnv("verificationCode")
+    const endpoint = getEnv("endpoint")
 
-    const responseHash = hash.digest('hex');
-    console.log('response hash: ',responseHash);  
-    console.log('END');
-
-    if (responseHash.charCodeAt(0) === 0xFEFF) {
-      responseHash.slice(1);
+    if (!verificationCode || !endpoint) {
+      return json({ message: "Challenge verification is not configured" }, 500)
     }
 
-    return new Response(JSON.stringify({challengeResponse: responseHash}), {headers: {'Content-Type': 'application/json'}});
+    const responseHash = crypto
+      .createHash("sha256")
+      .update(challengeCode)
+      .update(verificationCode)
+      .update(endpoint)
+      .digest("hex")
+
+    return json({ challengeResponse: responseHash.replace(/^\uFEFF/, "") })
   } catch (error) {
-    console.log({ error });
-    return {
-      statusCode: 500,
-      message: error
-    }
+    console.error("Challenge verification failed", error)
+    return json({ message: "Internal server error" }, 500)
   }
-};
-
-// export const config = {
-//     path: "/api/eadcnwapi"
-// };
+}

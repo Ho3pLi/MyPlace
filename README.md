@@ -48,8 +48,20 @@ www.mylifeblike.com
 
 ## Requirements
 
-- Node (v16.16.0)
+- Node 22+ recommended
 - VS Code (optional)
+## Environment
+
+Create a local `.env` file from `.env.example`:
+
+```bash
+VITE_API_URL=http://localhost:4000
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+```
+
+The blog and admin screens expect a backend API at `VITE_API_URL`.
 ## Installation & Usage
 
 **Italian**
@@ -62,6 +74,8 @@ Seguirò la procedura con VS code ma questi passaggi possono essere effettuati a
 - Aprite il progetto in VS Code
 - Nel terminale di VS Code lanciate il comando ```npm i``` per installare le dipendenze necessarie al funzionamento
 - Dopodichè potrete lanciare il comando ```npm start``` per avviare il sito web in locale
+- Usate ```npm run build``` per creare la build di produzione in ```dist```
+- Usate ```npm test``` per lanciare gli smoke test
 
 **English**
 
@@ -73,6 +87,8 @@ I will follow the procedure with VS code but these steps can also be done throug
 - Open the project in VS Code
 - In the VS Code terminal run the command ```npm i``` to install the dependencies necessary for the operation
 - After that you can run the command ```npm start``` to start the website locally
+- Use ```npm run build``` to create the production build in ```dist```
+- Use ```npm test``` to run the smoke tests
 ## Contributing
 
 Contributions are always welcome(!), but..

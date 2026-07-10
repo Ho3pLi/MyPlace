@@ -3,35 +3,32 @@ import "./footer.css"
 import {FaGithub} from "react-icons/fa"
 import {FiGitlab} from "react-icons/fi"
 import {BsLinkedin} from "react-icons/bs"
-import {useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 const Footer = () => {
-
-  let navigate = useNavigate()
-
   return (    
     <footer>
 
-      <a href="#" className="footer__logo">Daniele Barile</a>
+      <Link to="/" className="footer__logo">Daniele Barile</Link>
 
       <ul className="permalinks">
 
-        <li><a href="#">Home</a></li>
+        <li><Link to="/">Home</Link></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="/Blog" onClick={() => {navigate("/Blog")}}>Blog</a></li>
-        <li><a href="/developer-tools" onClick={() => {navigate("/developer-tools")}}>Developer Tools</a></li>
-        <li><a href="/statly" onClick={() => {navigate("/statly")}}>Statly</a></li>
+        <li><Link to="/Blog">Blog</Link></li>
+        <li><Link to="/developer-tools">Developer Tools</Link></li>
+        <li><Link to="/statly">Statly</Link></li>
         <li><a href="#contact">Contact</a></li>
 
       </ul>
 
       <div className="footer__socials">
 
-        <a href="https://github.com"><FaGithub/></a>
-        <a href="https://www.linkedin.com/in/danielebarile/"><BsLinkedin/></a>
-        <a href="https://gitlab.com"><FiGitlab/></a>
+        <a href="https://github.com/Ho3pLi" target="_blank" rel="noreferrer"><FaGithub/></a>
+        <a href="https://www.linkedin.com/in/danielebarile/" target="_blank" rel="noreferrer"><BsLinkedin/></a>
+        <a href="https://gitlab.com/Ho3pLi" target="_blank" rel="noreferrer"><FiGitlab/></a>
 
       </div>
 

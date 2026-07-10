@@ -1,11 +1,10 @@
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
 import App from "./App"
 import "./index.css"
 import { PostsProvider } from "./context/PostsContext"
 
-ReactDOM.render(
+createRoot(document.querySelector("#root")).render(
   <PostsProvider>
     <App />
-  </PostsProvider>,
-  document.querySelector("#root")
+  </PostsProvider>
 )

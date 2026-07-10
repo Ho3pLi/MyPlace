@@ -2,27 +2,41 @@ import React from "react"
 import "./contact.css"
 import {MdOutlineEmail} from "react-icons/md"
 import {AiOutlineLinkedin} from "react-icons/ai"
-import { useRef } from "react";
-import emailjs from "emailjs-com";
+import { useRef, useState } from "react"
+import emailjs from "emailjs-com"
 
+const emailConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+}
 
 
 const Contact = () => {
 
-  const form = useRef();
+  const form = useRef()
+  const [status, setStatus] = useState("")
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    emailjs.sendForm("service_vwc6g1k", "template_7w6tin8", form.current, "iQC-8x1MFJRCMSgxg")
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    const { serviceId, templateId, publicKey } = emailConfig
 
-    e.target.reset()
-  };
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("Email service is not configured.")
+      return
+    }
+
+    setStatus("Sending...")
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then(() => {
+        setStatus("Message sent.")
+        e.target.reset()
+      }, () => {
+        setStatus("Unable to send the message. Please try again later.")
+      })
+  }
 
   return (
     <section id="contact">
@@ -48,7 +62,7 @@ const Contact = () => {
             <AiOutlineLinkedin className="contact__option-icon"/>
             <h4>LinkedIn</h4>
             <h5>Daniele Barile</h5>
-            <a href="https://www.linkedin.com/in/danielebarile/" target="_blank">Send a message</a>
+            <a href="https://www.linkedin.com/in/danielebarile/" target="_blank" rel="noreferrer">Send a message</a>
             
           </article>
 
@@ -60,6 +74,7 @@ const Contact = () => {
           <input type="email" name="email" placeholder="Your Email" required/>
           <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
           <button type="submit" className="btn btn-primary">Send</button>
+          {status && <p className="text-light">{status}</p>}
 
         </form>
 
