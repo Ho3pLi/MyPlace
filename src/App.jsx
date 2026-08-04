@@ -1,23 +1,16 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Header from "./components/header/Header"
-import Nav from "./components/nav/Nav"
 import NavG from "./components/navG/NavG"
 import NavGG from "./components/navGG/NavGG"
-import About from "./components/about/About"
 import Admin from "./components/admin/Admin"
-import Experience from "./components/experience/Experience"
-import Services from "./components/services/Services"
-import BlogPreview from "./components/blogPreview/BlogPreview"
 import Blog from "./components/blog/Blog"
-import Contact from "./components/contact/Contact"
-import Footer from "./components/footer/Footer"
 import Error from "./components/error/Error"
 import Post from "./components/post/Post"
 import DeveloperTools from "./components/developerTools/DeveloperTools"
 import PrivacyPolicy from "./components/developerTools/PrivacyPolicy"
 import TermsOfService from "./components/developerTools/TermsOfService"
 import Statly from "./components/statly/Statly"
+import Home from "./components/home/Home"
 
 const App = () => {
   return (
@@ -25,18 +18,7 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={
-            <>
-              <Header />
-              <Nav />
-              <About />
-              <Experience />
-              <Services />
-              <BlogPreview />
-              <Contact />
-              <Footer />
-            </>
-          }
+          element={<Home />}
         />
         <Route
           path="/admin"

@@ -1,0 +1,234 @@
+.homePage {
+  --home-bg: oklch(97.5% 0.014 170);
+  --home-surface: oklch(99.4% 0.006 170);
+  --home-fg: oklch(20% 0.026 190);
+  --home-muted: oklch(47% 0.022 185);
+  --home-border: oklch(88% 0.014 175);
+  --home-accent: oklch(52% 0.12 165);
+  --home-font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+  --home-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(28px, 7vw, 86px) max(24px, calc((100vw - 820px) / 2)) 56px;
+  background: var(--home-bg);
+  color: var(--home-fg);
+  font-family: var(--home-font);
+  font-size: 16px;
+  line-height: 1.72;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+.homePage *,
+.homePage *::before,
+.homePage *::after {
+  box-sizing: border-box;
+}
+
+.homePage a {
+  color: var(--home-fg);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklch, var(--home-fg) 18%, transparent);
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.homePage a:hover,
+.homePage a:focus-visible {
+  color: var(--home-accent);
+  border-color: currentColor;
+  outline: none;
+}
+
+.homeNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  width: auto;
+  margin-bottom: clamp(42px, 8vw, 86px);
+  padding: 0;
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: auto;
+  transform: none;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  color: var(--home-muted);
+  font-size: 14px;
+}
+
+.homeNav a {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--home-muted);
+  font-size: inherit;
+  border-bottom-color: transparent;
+}
+
+.homeNav a:hover,
+.homeNav a:focus-visible {
+  background: transparent;
+  color: var(--home-accent);
+  border-bottom-color: transparent;
+}
+
+.homeIntro h1 {
+  margin: 0;
+  color: var(--home-fg);
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 720;
+}
+
+.homeLead {
+  margin: 22px 0 0;
+  max-width: 710px;
+  color: color-mix(in oklch, var(--home-fg) 82%, var(--home-muted));
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.58;
+}
+
+.homeBlock {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+}
+
+.homeLine {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+}
+
+.homeLine div:last-child {
+  min-width: 0;
+}
+
+.homeLabel,
+.homeMeta,
+.homeTiny {
+  font-family: var(--home-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--home-muted);
+}
+
+.homeLinkList {
+  display: inline;
+}
+
+.homeLinkList a {
+  white-space: nowrap;
+}
+
+.homeSep {
+  height: 1px;
+  margin: clamp(34px, 6vw, 56px) 0;
+  background: var(--home-border);
+}
+
+.homeSection {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+}
+
+.homeSection + .homeSection {
+  margin-top: 34px;
+}
+
+.homeSection h2 {
+  margin: 0;
+  color: var(--home-fg);
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  text-align: left;
+}
+
+.homeItems {
+  display: grid;
+  gap: 14px;
+}
+
+.homeItem {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--home-border);
+}
+
+.homeItem:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.homeItemTitle {
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+span.homeItemTitle {
+  display: inline-block;
+  color: var(--home-fg);
+}
+
+.homeItem p {
+  margin: 3px 0 0;
+  color: var(--home-muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.homeItemLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.homeItemPlaceholder {
+  padding: 16px 0 0;
+  border-top: 1px solid var(--home-border);
+  border-bottom: 0;
+}
+
+.homeFooter {
+  margin-top: 48px;
+  color: var(--home-muted);
+  font-size: 14px;
+}
+
+.homeFooter a {
+  color: var(--home-muted);
+}
+
+@media (max-width: 620px) {
+  .homePage {
+    padding-inline: 24px;
+  }
+
+  .homeLine,
+  .homeItem {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .homeNav {
+    gap: 14px;
+  }
+}
