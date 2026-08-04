@@ -38,7 +38,7 @@ For any doubt or difficulty do not hesitate to contact me.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ho3pLi/MyPlace)
 
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fmylifeblike.netlify.app%2F)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.mylifeblike.com%2F)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Ho3pLi/MyPlace)
 
@@ -62,6 +62,25 @@ VITE_EMAILJS_PUBLIC_KEY=
 ```
 
 The blog and admin screens expect a backend API at `VITE_API_URL`.
+
+For Vercel deployments, configure the same variables in the project settings. The serverless
+endpoints in `api/` also expect:
+
+```bash
+verificationCode=
+endpoint=
+```
+
+## Deployment
+
+This project is configured for Vercel:
+
+- Framework preset: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Serverless functions: `api/*.mjs`
+- SPA fallback: configured in `vercel.json`
+
 ## Installation & Usage
 
 **Italian**
