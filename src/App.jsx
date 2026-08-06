@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes, useLocation, matchPath, Navigate, useParams } from "react-router-dom"
 import { FiMoon, FiSun } from "react-icons/fi"
-import NavG from "./components/navG/NavG"
 import Blog from "./components/blog/Blog"
 import Error from "./components/error/Error"
 import Post from "./components/post/Post"
@@ -84,21 +83,11 @@ const AppContent = () => {
         />
         <Route
           path="/developer-tools/privacy-policy"
-          element={
-            <>
-              <NavG />
-              <PrivacyPolicy />
-            </>
-          }
+          element={<PrivacyPolicy />}
         />
         <Route
           path="/developer-tools/terms-of-service"
-          element={
-            <>
-              <NavG />
-              <TermsOfService />
-            </>
-          }
+          element={<TermsOfService />}
         />
         <Route
           path="*"
