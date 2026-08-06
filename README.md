@@ -61,7 +61,7 @@ VITE_EMAILJS_TEMPLATE_ID=
 VITE_EMAILJS_PUBLIC_KEY=
 ```
 
-The blog and admin screens expect a backend API at `VITE_API_URL`.
+The blog screens expect a backend API at `VITE_API_URL`.
 
 For Vercel deployments, configure the same variables in the project settings. The serverless
 endpoints in `api/` also expect:

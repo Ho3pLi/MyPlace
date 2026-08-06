@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes, useLocation, matchPath, Navigate, useParams } from "react-router-dom"
 import { FiMoon, FiSun } from "react-icons/fi"
 import NavG from "./components/navG/NavG"
-import Admin from "./components/admin/Admin"
 import Blog from "./components/blog/Blog"
 import Error from "./components/error/Error"
 import Post from "./components/post/Post"
@@ -14,7 +13,6 @@ import Home from "./components/home/Home"
 
 const routesWithThemeToggle = [
   "/",
-  "/admin",
   "/blog",
   "/blog/:slug",
   "/statly",
@@ -60,10 +58,6 @@ const AppContent = () => {
         <Route
           path="/"
           element={<Home />}
-        />
-        <Route
-          path="/admin"
-          element={<Admin />}
         />
         <Route
           path="/Blog"

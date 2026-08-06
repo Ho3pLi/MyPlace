@@ -35,25 +35,6 @@ export function normalizePost(post) {
   };
 }
 
-function normalizeAdminPost(post) {
-  return {
-    id: post.id,
-    title: post.title || "",
-    slug: post.slug || "",
-    excerpt: post.excerpt || "",
-    banner: post.banner || "",
-    bannerAlt: post.bannerAlt || "",
-    github: post.github || "",
-    content: post.content || "",
-    readTime: Number(post.readTime || 0),
-    publishedAt: post.publishedAt || "",
-    updatedAt: post.updatedAt || "",
-    status: post.status || "draft",
-    views: Number(post.views || 0),
-    tags: Array.isArray(post.tags) ? post.tags : []
-  };
-}
-
 async function fetchJson(path) {
   return fetchJsonWithOptions(path);
 }
@@ -69,29 +50,6 @@ async function fetchJsonWithOptions(path, options = {}) {
   return response.json();
 }
 
-async function fetchAdminJson(path, token, options = {}) {
-  const response = await fetch(`${API_URL}${path}`, {
-    ...options,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-      ...(options.headers || {})
-    }
-  });
-
-  if (!response.ok) {
-    const error = new Error(`Admin request failed (${response.status})`);
-    error.status = response.status;
-    throw error;
-  }
-
-  if (response.status === 204) {
-    return null;
-  }
-
-  return response.json();
-}
-
 export async function fetchPosts() {
   const data = await fetchJson("/posts");
   return Array.isArray(data) ? data.map(normalizePost) : [];
@@ -100,49 +58,4 @@ export async function fetchPosts() {
 export async function fetchPostBySlug(slug) {
   const data = await fetchJson(`/posts/${encodeURIComponent(slug)}`);
   return normalizePost(data);
-}
-
-export async function adminLogin(token) {
-  const response = await fetch(`${API_URL}/auth/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ token })
-  });
-
-  if (!response.ok) {
-    const error = new Error(`Login failed (${response.status})`);
-    error.status = response.status;
-    throw error;
-  }
-
-  return response.json();
-}
-
-export async function fetchAdminPosts(token) {
-  const data = await fetchAdminJson("/admin/posts", token);
-  return Array.isArray(data) ? data.map(normalizeAdminPost) : [];
-}
-
-export async function createAdminPost(token, payload) {
-  const data = await fetchAdminJson("/admin/posts", token, {
-    method: "POST",
-    body: JSON.stringify(payload)
-  });
-  return normalizeAdminPost(data);
-}
-
-export async function updateAdminPost(token, id, payload) {
-  const data = await fetchAdminJson(`/admin/posts/${id}`, token, {
-    method: "PATCH",
-    body: JSON.stringify(payload)
-  });
-  return normalizeAdminPost(data);
-}
-
-export async function deleteAdminPost(token, id) {
-  await fetchAdminJson(`/admin/posts/${id}`, token, {
-    method: "DELETE"
-  });
 }
