@@ -1,58 +1,77 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./developerTools.css"
 
+const featureLines = [
+  {
+    label: "Workflow",
+    content: "Quick browser actions for recurring developer tasks."
+  },
+  {
+    label: "Interface",
+    content: "Minimal UI designed to stay out of the way."
+  },
+  {
+    label: "Privacy",
+    content: "No personal data collection."
+  }
+]
+
 const DeveloperTools = () => {
-  const navigate = useNavigate()
   return (
-    <section id="developer-tools" className="devtools__section">
-      <div className="container devtools__container">
-        <header className="devtools__header">
-          <h5>Chrome Extension</h5>
-          <h2>Developer Tools</h2>
-          <p className="text-light">
-            A lightweight suite of utilities to speed up common developer tasks
-            right in your browser. Clean design, privacy-friendly.
-          </p>
-          <div className="devtools__cta">
-            <a className="btn btn-primary" href="#install">How to install</a>
-            <a
-              className="btn"
-              href="/developer-tools/privacy-policy"
-              onClick={(e) => { e.preventDefault(); navigate("/developer-tools/privacy-policy") }}
-            >Privacy Policy</a>
-            <a
-              className="btn"
-              href="/developer-tools/terms-of-service"
-              onClick={(e) => { e.preventDefault(); navigate("/developer-tools/terms-of-service") }}
-            >Terms of Service</a>
-          </div>
-        </header>
+    <main id="developer-tools" className="devtoolsPage">
+      <nav className="devtoolsNav" aria-label="Developer Tools navigation">
+        <Link to="/">Home</Link>
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <Link to="/developer-tools/privacy-policy">Privacy</Link>
+        <Link to="/developer-tools/terms-of-service">Terms</Link>
+      </nav>
 
-        <div className="devtools__grid">
-          <article className="devtools__card">
-            <h3>Key features</h3>
-            <ul>
-              <li>Quick actions for recurring developer workflows.</li>
-              <li>Minimal UI.</li>
-              <li>No personal data collection (see Privacy Policy).</li>
-            </ul>
-          </article>
+      <header className="devtoolsIntro">
+        <span className="devtoolsMeta">Chrome Extension</span>
+        <h1>Developer Tools</h1>
+        <p className="devtoolsLead">
+          A lightweight suite of utilities to speed up common developer tasks right in your browser.
+          Clean design, practical shortcuts, and a privacy-friendly footprint.
+        </p>
+      </header>
 
-          <article id="install" className="devtools__card">
-            <h3>Installation</h3>
-            <p>
-              Available on the Chrome Web Store.
-            </p>
-            <p>
-              Link: <a href="https://chromewebstore.google.com/detail/iopaecchbfgonpfdleogegogcolggped?utm_source=item-share-cb" target="_blank" rel="noreferrer">Install from Chrome Web Store</a>
-            </p>
-          </article>
+      <div className="devtoolsSep" aria-hidden="true" />
+
+      <section id="features" className="devtoolsSection">
+        <h2>Features</h2>
+        <div className="devtoolsBlock">
+          {featureLines.map(({ label, content }) => (
+            <div className="devtoolsLine" key={label}>
+              <span className="devtoolsMeta">{label}</span>
+              <div>{content}</div>
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="install" className="devtoolsSection">
+        <h2>Install</h2>
+        <article className="devtoolsItem">
+          <span className="devtoolsMeta">Chrome Store</span>
+          <div>
+            <a
+              className="devtoolsItemTitle"
+              href="https://chromewebstore.google.com/detail/iopaecchbfgonpfdleogegogcolggped?utm_source=item-share-cb"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Install from Chrome Web Store
+            </a>
+            <p>
+              The extension is available from the official Chrome Web Store listing.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
   )
 }
 
 export default DeveloperTools
-

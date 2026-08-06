@@ -66,12 +66,7 @@ const App = () => {
           />
           <Route
             path="/developer-tools"
-            element={
-              <>
-                <NavG />
-                <DeveloperTools />
-              </>
-            }
+            element={<DeveloperTools />}
           />
           <Route
             path="/developer-tools/privacy-policy"
