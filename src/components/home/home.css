@@ -22,6 +22,19 @@
   font-variant-numeric: tabular-nums;
 }
 
+.appShellDark .homePage {
+  --home-bg: oklch(18% 0.024 190);
+  --home-surface: oklch(21% 0.022 190);
+  --home-fg: oklch(92% 0.014 180);
+  --home-muted: oklch(68% 0.026 185);
+  --home-border: oklch(31% 0.022 190);
+  --home-accent: oklch(74% 0.13 165);
+
+  background:
+    radial-gradient(circle at 68% 0%, color-mix(in oklch, var(--home-accent) 7%, transparent), transparent 34%),
+    var(--home-bg);
+}
+
 .homePage *,
 .homePage *::before,
 .homePage *::after {
@@ -82,7 +95,7 @@
 .homeIntro h1 {
   margin: 0;
   color: var(--home-fg);
-  font-size: clamp(42px, 8vw, 76px);
+  font-size: clamp(34px, 6vw, 56px);
   line-height: 0.98;
   letter-spacing: -0.04em;
   font-weight: 720;

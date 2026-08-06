@@ -68,6 +68,74 @@ body{
   transition: var(--transition);
 }
 
+.appShell {
+  min-height: 100vh;
+}
+
+.appShellDark {
+  --color-bg: oklch(18% 0.024 190);
+  --color-bg-variant: oklch(21% 0.022 190);
+  --color-primary: oklch(92% 0.014 180);
+  --color-primary-variant: color-mix(in oklch, oklch(92% 0.014 180) 25%, transparent);
+  --color-white: oklch(92% 0.014 180);
+  --color-light: oklch(68% 0.026 185);
+  --color-card: color-mix(in oklch, oklch(21% 0.022 190) 90%, transparent);
+  --color-panel: oklch(21% 0.022 190);
+  --color-border: oklch(31% 0.022 190);
+}
+
+.siteReworkBanner {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: #f5f5f4;
+  color: #050505;
+  border-bottom: 1px solid rgb(5 5 5 / 12%);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.themeToggle {
+  position: absolute;
+  top: calc(2.55rem + clamp(28px, 7vw, 86px));
+  right: max(24px, calc((100vw - 820px) / 2));
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgb(5 5 5 / 72%);
+  cursor: pointer;
+  transition: color 140ms ease;
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible {
+  color: #050505;
+}
+
+.themeToggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.appShellDark .themeToggle {
+  color: oklch(68% 0.026 185);
+}
+
+.appShellDark .themeToggle:hover,
+.appShellDark .themeToggle:focus-visible {
+  color: oklch(74% 0.13 165);
+}
+
 /* General */
 
 .container {
