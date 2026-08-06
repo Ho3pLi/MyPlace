@@ -1,114 +1,131 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./statly.css"
 import valScreen from "../../assets/val_screen.png"
 import rlScreen from "../../assets/rl_screen.png"
 
+const featureLines = [
+  {
+    label: "Tracks",
+    content: "Rank points gained or lost, distance to next rank, derank risk, and daily match performance."
+  },
+  {
+    label: "Reports",
+    content: "Automatic daily summaries delivered on a schedule for each player."
+  },
+  {
+    label: "Games",
+    content: "Valorant, League of Legends, Apex Legends, Rocket League, and more."
+  }
+]
+
+const reportLines = [
+  "Rank delta and streaks",
+  "Next-rank progress",
+  "Derank risk",
+  "Recent match highlights"
+]
+
+const roadmapLines = [
+  {
+    label: "More titles",
+    content: "Expand tracking coverage across more competitive games."
+  },
+  {
+    label: "Team summaries",
+    content: "Shared dashboards and reports for groups."
+  },
+  {
+    label: "Deeper trends",
+    content: "Richer analytics for long-running player progress."
+  }
+]
+
 const Statly = () => {
   return (
-    <section id="statly" className="statly">
-      <div className="container statly__container">
-        <header className="statly__hero">
-          <p className="eyebrow">Discord bot</p>
-          <h1>Statly</h1>
-          <p className="statly__lede">
-            Competitive-tracking bot for ranked grinders. Automatic daily summaries, rank deltas, and
-            performance insights across Valorant, CS:GO, Apex Legends, Splitgate, The Division 2, and more.
-          </p>
-          <div className="statly__cta">
-            <a className="btn btn-primary" href="#features">See features</a>
-            <a className="btn" href="#media">Preview</a>
-          </div>
-        </header>
+    <main id="statly" className="statlyPage">
+      <nav className="statlyNav" aria-label="Statly navigation">
+        <Link to="/">Home</Link>
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
 
-        <div className="statly__grid" id="features">
-          <article className="statly__card">
-            <h3>What Statly tracks</h3>
-            <ul>
-              <li>Rank points gained/lost during the day.</li>
-              <li>Distance to next rank and risk of derank.</li>
-              <li>Daily match performance and trendlines.</li>
-              <li>Custom daily report time per player.</li>
-            </ul>
-          </article>
+      <header className="statlyIntro">
+        <span className="statlyMeta">Discord bot</span>
+        <h1>Statly</h1>
+        <p className="statlyLead">
+          Competitive-tracking bot for ranked players. Automatic daily summaries, rank deltas,
+          and progress snapshots across the games you care about.
+        </p>
+      </header>
 
-          <article className="statly__card">
-            <h3>Why it helps</h3>
-            <ul>
-              <li>Stay focused on your climb with clear deltas.</li>
-              <li>Spot bad streaks early and adjust.</li>
-              <li>Share or archive daily reports automatically.</li>
-              <li>Clean, reliable, automated—no clutter.</li>
-            </ul>
-          </article>
+      <div className="statlySep" aria-hidden="true" />
 
-          <article className="statly__card">
-            <h3>Games covered</h3>
-            <div className="statly__pillbox">
-              {["Valorant", "League of Legends", "Apex Legends", "Rocket League"].map((game) => (
-                <span key={game} className="statly__pill">{game}</span>
-              ))}
+      <section id="features" className="statlySection">
+        <h2>Features</h2>
+        <div className="statlyBlock">
+          {featureLines.map(({ label, content }) => (
+            <div className="statlyLine" key={label}>
+              <span className="statlyMeta">{label}</span>
+              <div>{content}</div>
             </div>
-          </article>
+          ))}
         </div>
+      </section>
 
-        <section className="statly__section" id="media">
-          <div className="statly__section-copy">
-            <p className="eyebrow">Daily report</p>
-            <h2>Personalized summaries delivered on schedule</h2>
-            <p>
-              Set your daily report time and Statly sends a concise recap: rank changes, match stats, and key
-              insights to understand your session at a glance.
-            </p>
-            <div className="statly__bullets">
-              <span>Rank delta &amp; streaks</span>
-              <span>Next rank progress</span>
-              <span>Derank risk</span>
-              <span>Recent match highlights</span>
+      <section id="preview" className="statlySection">
+        <h2>Preview</h2>
+        <div className="statlyPreviewList">
+          <article className="statlyPreview">
+            <div className="statlyPreviewCopy">
+              <span className="statlyMeta">Daily report</span>
+              <h3>Personalized summaries delivered on schedule</h3>
+              <p>
+                Set your daily report time and Statly sends a concise recap with rank changes,
+                match stats, and key session details.
+              </p>
+              <div className="statlyTagList">
+                {reportLines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="statly__media">
-            <figure className="statly__media-frame">
+            <figure className="statlyMedia">
               <img src={valScreen} alt="Statly daily report example" />
               <figcaption>Daily summary with rank deltas and streaks</figcaption>
             </figure>
-          </div>
-        </section>
+          </article>
 
-        <section className="statly__section statly__section--alt">
-          <div className="statly__media">
-            <figure className="statly__media-frame">
+          <article className="statlyPreview statlyPreviewAlt">
+            <figure className="statlyMedia">
               <img src={rlScreen} alt="Statly live tracking example" />
               <figcaption>Live session tracking for your climb</figcaption>
             </figure>
-          </div>
-          <div className="statly__section-copy">
-            <p className="eyebrow">Live tracking</p>
-            <h2>See progress as you play</h2>
-            <p>
-              Track gains and losses throughout the day. Statly keeps a running tally so you always know how
-              the session is trending before you call it.
-            </p>
-            <ul className="statly__list">
-              <li>Session-based rank points.</li>
-              <li>Per-match performance snapshots.</li>
-              <li>Alerts when you are close to a rank change.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="statly__section">
-          <div className="statly__cta-block">
-            <h2>Roadmap</h2>
-            <p>More games, richer analytics, team dashboards, and exportable reports are on the way.</p>
-            <div className="statly__pillbox">
-              <span className="statly__pill">More titles</span>
-              <span className="statly__pill">Team summaries</span>
-              <span className="statly__pill">Deeper trends</span>
+            <div className="statlyPreviewCopy">
+              <span className="statlyMeta">Live tracking</span>
+              <h3>See progress as you play</h3>
+              <p>
+                Track gains and losses throughout the day so you know how the session is trending
+                before you call it.
+              </p>
             </div>
-          </div>
-        </section>
-      </div>
-    </section>
+          </article>
+        </div>
+      </section>
+
+      <section id="roadmap" className="statlySection">
+        <h2>Roadmap</h2>
+        <div className="statlyBlock">
+          {roadmapLines.map(({ label, content }) => (
+            <div className="statlyLine" key={label}>
+              <span className="statlyMeta">{label}</span>
+              <div>{content}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   )
 }
 

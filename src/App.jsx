@@ -72,12 +72,7 @@ const AppContent = () => {
         <Route path="/Blog/:slug" element={<Post />} />
         <Route
           path="/statly"
-          element={
-            <>
-              <NavG />
-              <Statly />
-            </>
-          }
+          element={<Statly />}
         />
         <Route
           path="/developer-tools"
