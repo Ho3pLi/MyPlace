@@ -74,7 +74,10 @@ const Blog = () => {
         {loading ? (
           <div className="blogEmpty">Loading posts...</div>
         ) : error ? (
-          <div className="blogEmpty">Failed to load posts: {error}</div>
+          <div className="blogEmpty">
+            <span>No posts found.</span>
+            <small>The backend is not working again. Big news :P</small>
+          </div>
         ) : filteredPosts.length > 0 ? (
           <div className="blogItems">
             {filteredPosts.map(({ id, banner, bannerAlt, title, github, slug, excerpt, publishedAt, readTime, tags }) => (

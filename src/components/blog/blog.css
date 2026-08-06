@@ -210,10 +210,17 @@
 }
 
 .blogEmpty {
+  display: grid;
+  gap: 4px;
   padding: 34px 0;
   color: var(--blog-muted);
   font-size: 15px;
   line-height: 1.55;
+}
+
+.blogEmpty small {
+  color: var(--blog-muted);
+  font-size: 13px;
 }
 
 @media screen and (max-width: 720px) {
