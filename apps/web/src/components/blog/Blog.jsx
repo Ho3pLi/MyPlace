@@ -75,7 +75,7 @@ const Blog = () => {
           <div className="blogEmpty">Loading posts...</div>
         ) : error ? (
           <div className="blogEmpty">
-            <span>No posts found.</span>
+            <span>Unable to load posts right now.</span>
             <small>The backend is not working again. Big news :P</small>
           </div>
         ) : filteredPosts.length > 0 ? (
@@ -108,7 +108,7 @@ const Blog = () => {
           </div>
         ) : (
           <div className="blogEmpty">
-            {posts.length === 0 ? "No published posts yet." : "No posts match your search."}
+            {posts.length === 0 ? "No posts found." : "No posts match your search."}
           </div>
         )}
       </section>

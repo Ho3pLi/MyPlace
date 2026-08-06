@@ -1,6 +1,12 @@
 # MyPlace API
 
-Express + SQLite backend for MyPlace blog posts.
+Temporary Express API for MyPlace.
+
+The backend will be rebuilt, so this app currently exposes only:
+
+```text
+GET /health
+```
 
 Run from the repository root:
 
@@ -16,4 +22,4 @@ npm run dev
 npm start
 ```
 
-Create `apps/api/.env` from `.env.example`. Keep `DATABASE_PATH` on persistent storage in production.
+Create `apps/api/.env` from `.env.example`.

@@ -4,13 +4,11 @@ Personal website and blog monorepo.
 
 ## Architecture
 
-This repository contains two independent applications managed with npm workspaces:
-
 ```text
 MyPlace/
 ├── apps/
 │   ├── web/   # React 18 + Vite frontend, Vercel serverless functions
-│   └── api/   # Express + SQLite blog API
+│   └── api/   # temporary Express API, currently health-check only
 ├── package.json
 ├── package-lock.json
 ├── README.md
@@ -19,11 +17,14 @@ MyPlace/
 
 The frontend reads the backend URL from `VITE_API_URL`. No production API URL is hardcoded.
 
+The backend is intentionally minimal right now because it will be rebuilt. It only exposes `/health`.
+
 ## Requirements
 
 - Node.js 22+
 - npm
-- SQLite-compatible filesystem storage for the backend database
+
+The repository includes `.node-version` with `22`.
 
 ## Install
 
@@ -37,11 +38,20 @@ There should be one lockfile only: `package-lock.json` in the root.
 
 ## Local Environment
 
-Create local env files from the examples:
+Create local env files from the examples.
+
+macOS/Linux:
 
 ```bash
 cp apps/web/.env.example apps/web/.env
 cp apps/api/.env.example apps/api/.env
+```
+
+Windows PowerShell:
+
+```powershell
+Copy-Item apps/web/.env.example apps/web/.env
+Copy-Item apps/api/.env.example apps/api/.env
 ```
 
 `apps/web/.env.example`:
@@ -57,11 +67,7 @@ VITE_EMAILJS_PUBLIC_KEY=
 
 ```text
 PORT=4000
-DATABASE_PATH=./data/myplace.sqlite
 CORS_ORIGIN=http://localhost:5173
-ADMIN_USER=admin
-ADMIN_TOTP_SECRET=
-ADMIN_SESSION_SECRET=
 ```
 
 Do not commit real `.env` files. They are ignored by git.
@@ -86,7 +92,7 @@ Run only the backend:
 npm run dev:api
 ```
 
-The default local URLs are:
+Default local URLs:
 
 - Web: `http://localhost:5173`
 - API: `http://localhost:4000`
@@ -109,70 +115,19 @@ npm run test:web
 npm run start:api
 ```
 
-The backend currently has no automated test suite; it is validated with runtime/API checks.
+The backend currently has no test suite because it is a temporary health-check service.
 
 ## API
 
-Public endpoints:
+Current backend endpoint:
 
 ```text
 GET /health
-GET /posts
-GET /posts/:slug
 ```
 
-Protected mutation endpoints:
+All other API routes currently return `404`.
 
-```text
-POST /posts
-PATCH /posts/:id
-DELETE /posts/:id
-```
-
-Compatibility admin endpoints are also available behind the same authentication middleware:
-
-```text
-GET /admin/posts
-GET /admin/posts/id/:id
-GET /admin/posts/slug/:slug
-POST /admin/posts
-PATCH /admin/posts/:id
-DELETE /admin/posts/:id
-```
-
-## Backend Authentication
-
-The backend is designed for one administrator, not a full user system.
-
-Login endpoint:
-
-```text
-POST /auth/login
-```
-
-Request body:
-
-```json
-{
-  "username": "admin",
-  "code": "123456"
-}
-```
-
-`code` is a 6-digit TOTP generated from `ADMIN_TOTP_SECRET`. A successful login returns a signed bearer token with a 2-hour expiry. Protected routes require:
-
-```text
-Authorization: Bearer <token>
-```
-
-Production must define both:
-
-```text
-ADMIN_TOTP_SECRET
-ADMIN_SESSION_SECRET
-```
-
-No admin secret is hardcoded in the repository.
+The blog frontend still calls `VITE_API_URL/posts`; until the backend is rebuilt, the blog shows a friendly unavailable message when that endpoint is missing.
 
 ## CORS
 
@@ -187,57 +142,6 @@ CORS_ORIGIN=http://localhost:5173,https://www.mylifeblike.com
 ```
 
 The backend does not default to `*`.
-
-## SQLite
-
-The backend uses `better-sqlite3`.
-
-Local default:
-
-```text
-apps/api/data/myplace.sqlite
-```
-
-The actual location is controlled by:
-
-```text
-DATABASE_PATH
-```
-
-Database files are ignored by git:
-
-```text
-*.sqlite
-*.sqlite-*
-*.db
-apps/api/data/
-```
-
-### Migrating an Existing SQLite Database
-
-Before moving or deploying an existing database, stop the old backend process and make a backup:
-
-```bash
-sqlite3 path/to/data.sqlite ".backup 'backup-before-migration.sqlite'"
-```
-
-Copy the database, WAL, and SHM files if they exist:
-
-```text
-data.sqlite
-data.sqlite-wal
-data.sqlite-shm
-```
-
-Then set `DATABASE_PATH` in the new backend environment to the copied database path.
-
-For production, place the database on persistent storage, for example:
-
-```text
-DATABASE_PATH=/var/lib/myplace/myplace.sqlite
-```
-
-If using a VPS, ensure the process user can read and write that directory. Back up the database before every deploy that changes schema or backend persistence behavior.
 
 ## Frontend Deploy on Vercel
 
@@ -270,69 +174,39 @@ endpoint=
 
 ## Backend Deploy
 
-The backend is deployable separately on any Node.js 22 environment.
+The backend can be deployed separately on any Node.js 22 environment.
 
-Typical VPS setup:
-
-```bash
-cd /opt/myplace
-npm install --omit=dev
-npm run start:api
-```
-
-Required production variables:
+Production variables:
 
 ```text
 NODE_ENV=production
 PORT=4000
-DATABASE_PATH=/var/lib/myplace/myplace.sqlite
 CORS_ORIGIN=https://www.mylifeblike.com
-ADMIN_USER=admin
-ADMIN_TOTP_SECRET=<totp secret>
-ADMIN_SESSION_SECRET=<long random signing secret>
 ```
 
-Use a process manager such as systemd or PM2. The server handles `SIGINT` and `SIGTERM` by closing the HTTP server and SQLite connection.
+Typical VPS start:
 
-Minimal systemd shape:
-
-```ini
-[Service]
-WorkingDirectory=/opt/myplace
-ExecStart=/usr/bin/npm run start:api
-Restart=always
-Environment=NODE_ENV=production
-Environment=PORT=4000
-Environment=DATABASE_PATH=/var/lib/myplace/myplace.sqlite
-Environment=CORS_ORIGIN=https://www.mylifeblike.com
-Environment=ADMIN_USER=admin
-Environment=ADMIN_TOTP_SECRET=replace-me
-Environment=ADMIN_SESSION_SECRET=replace-me
+```bash
+npm install --omit=dev
+npm run start:api
 ```
+
+The server handles `SIGINT` and `SIGTERM` by closing the HTTP server cleanly.
 
 ## Migration from `Ho3pLi/MyPlaceBackend`
 
-The backend source was imported into `apps/api`. The old repository should not be deleted automatically.
+`Ho3pLi/MyPlaceBackend` was analyzed, but the backend is now intentionally reduced to a health-check service because the API will be rebuilt.
 
-Recommended manual process:
+Do not delete or archive `MyPlaceBackend` until the new backend has been implemented, tested, and deployed.
 
-1. Verify local monorepo development.
-2. Deploy the new backend and frontend configuration.
-3. Confirm blog reads and protected writes work.
-4. Back up any existing SQLite database.
-5. Update documentation or GitHub repository description for `Ho3pLi/MyPlaceBackend`.
-6. Archive `Ho3pLi/MyPlaceBackend` only after production has been stable.
-
-If preserving backend git history becomes important, import it with `git subtree` before archiving the old repository:
+If you later want to preserve backend history in this monorepo, import it with `git subtree` before archiving the old repository:
 
 ```bash
 git subtree add --prefix=apps/api git@github.com:Ho3pLi/MyPlaceBackend.git main
 ```
 
-This migration did not use subtree, so the existing `Ho3pLi/MyPlace` history remains intact and backend source appears as newly added files.
-
 ## Notes
 
-- Do not deploy from this migration automatically.
-- Do not commit real secrets or SQLite databases.
-- The old `MyPlaceBackend/data/data.sqlite` was not copied into this repository.
+- Do not deploy automatically from this migration.
+- Do not commit real secrets.
+- Do not commit SQLite databases or other local runtime data.
