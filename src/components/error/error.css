@@ -47,7 +47,7 @@
 
 .errorHomeLink {
   position: absolute;
-  top: clamp(28px, 7vw, 86px);
+  top: calc(2.55rem + clamp(28px, 7vw, 86px));
   left: 50%;
   transform: translateX(-50%);
   color: var(--error-muted);
