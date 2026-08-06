@@ -1,0 +1,21 @@
+{
+  "name": "@myplace/api",
+  "version": "1.0.0",
+  "description": "MyPlace blog API",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "better-sqlite3": "^12.5.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
