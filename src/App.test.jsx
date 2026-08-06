@@ -49,7 +49,7 @@ describe("App", () => {
   it("renders the not found route", async () => {
     renderApp("/missing-page")
 
-    expect(screen.getByText(/404 error/i)).toBeInTheDocument()
+    expect(screen.getByRole("heading", { level: 1, name: /page not found/i })).toBeInTheDocument()
 
     await waitFor(() => {
       expect(fetch).toHaveBeenCalledWith("http://localhost:4000/posts", {})

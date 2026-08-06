@@ -1,26 +1,22 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./error.css"
-
-
 
 const Error = () => {
   return (
-    <div className="error">
-
-      <div className="copy-container center-xy">
-
-        <p>oops, 404 error, try something else lol</p>
-        <h6>(try to find the easter egg)</h6>
-
-        <br />
-
-        <h5>if you're looking for a hidden thing, it isn't here haha</h5>
-        <small>o forse è proprio questa, chissà</small>
-
+    <main className="errorPage">
+      <Link className="errorHomeLink" to="/">Home</Link>
+      <div className="errorCopy">
+        <span className="errorMeta">404</span>
+        <h1>Page not found</h1>
+        <p className="errorLead">
+          Try something else.
+        </p>
+        <p className="errorHint">(try to find the easter egg)</p>
+        <p className="errorEgg">if you are looking for a hidden thing, it is not here</p>
+        <small className="errorEgg">o forse è proprio questa, chissà</small>
       </div>
-
-    </div>
-
+    </main>
   )
 }
 
