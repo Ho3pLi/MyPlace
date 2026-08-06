@@ -19,7 +19,7 @@ const BlogPreview = () => {
     <section id="blogPreview">
     
      <h5>My Recent Post</h5>
-     <h6 onClick={() => {navigate("/Blog")}}>(yea i also have a blog, check it out!)</h6>
+     <h6 onClick={() => {navigate("/blog")}}>(yea i also have a blog, check it out!)</h6>
      <h2>Blog</h2>
 
      <div className="container blogPreview__container">
@@ -46,7 +46,7 @@ const BlogPreview = () => {
 
               <div className="blogPreview__item-cta">
 
-                <Link to={`/Blog/${slug}`} className="btn btn-primary">Read</Link>
+                <Link to={`/blog/${slug}`} className="btn btn-primary">Read</Link>
                 {github && <a href={github} className="btn" target="_blank" rel="noreferrer">Github</a>}
 
               </div>

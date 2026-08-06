@@ -4,6 +4,18 @@ import SearchBar from "../searchBar/SearchBar"
 import { Link } from "react-router-dom"
 import { usePosts } from "../../context/PostsContext"
 
+const formatDate = (value) => {
+  if (!value) {
+    return "Draft"
+  }
+
+  return new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  }).format(new Date(value))
+}
+
 const Blog = () => {
   const [query, setQuery] = useState("")
   const { posts, loading, error } = usePosts()
@@ -14,7 +26,10 @@ const Blog = () => {
     }
 
     const lowered = query.trim().toLowerCase()
-    return posts.filter((post) => post.title.toLowerCase().includes(lowered))
+    return posts.filter((post) => {
+      const searchable = [post.title, post.excerpt, ...(post.tags || [])].join(" ").toLowerCase()
+      return searchable.includes(lowered)
+    })
   }, [posts, query])
 
   const searchData = useMemo(
@@ -22,61 +37,79 @@ const Blog = () => {
       posts.map((post) => ({
         id: post.id,
         title: post.title,
-        read: `/Blog/${post.slug}`
+        read: `/blog/${post.slug}`
       })),
     [posts]
   )
 
   return (
-    <section id="blog">
-      <header className="blogHeader">
-        <div className="container blogHeader__container">
-          <h1>Welcome in my blog!</h1>
-          <h3>the blog of a simple developer..</h3>
-          <h4>..where i write what goes through my mind</h4>
+    <main id="blog" className="blogPage">
+      <nav className="blogNav" aria-label="Blog navigation">
+        <Link to="/">Home</Link>
+        <a href="#posts">Posts</a>
+        <Link to="/developer-tools">Tools</Link>
+      </nav>
+
+      <header className="blogIntro">
+        <span className="blogMeta">Writing</span>
+        <h1>Blog</h1>
+        <p className="blogLead">
+          Notes, experiments, and practical writeups from the things I am building or learning.
+        </p>
+      </header>
+
+      <div className="blogSep" aria-hidden="true" />
+
+      <section id="posts" className="blogSection">
+        <div className="blogSectionHeader">
+          <h2>Posts</h2>
           <SearchBar
-            placeholder="Search in the blog..."
+            placeholder="Search posts..."
             data={searchData}
             value={query}
             onChange={setQuery}
           />
         </div>
-      </header>
 
-      <div className="container blog__container">
         {loading ? (
-          <div className="blog__empty">Loading posts...</div>
+          <div className="blogEmpty">Loading posts...</div>
         ) : error ? (
-          <div className="blog__empty">Failed to load posts: {error}</div>
+          <div className="blogEmpty">Failed to load posts: {error}</div>
         ) : filteredPosts.length > 0 ? (
-          filteredPosts.map(({ id, banner, title, github, slug, excerpt }) => (
-            <article key={id} className="blog__item">
-              <div className="blog__item-image">
-                <img src={banner} alt={title} />
-              </div>
-
-              <h3>{title}</h3>
-              {excerpt && <p className="blog__item-excerpt">{excerpt}</p>}
-
-              <div className="blog__item-cta">
-                <Link to={`/Blog/${slug}`} className="btn btn-primary">
-                  Read
-                </Link>
-                {github && (
-                  <a href={github} className="btn" target="_blank" rel="noreferrer">
-                    Github
-                  </a>
-                )}
-              </div>
-            </article>
-          ))
+          <div className="blogItems">
+            {filteredPosts.map(({ id, banner, bannerAlt, title, github, slug, excerpt, publishedAt, readTime, tags }) => (
+              <article key={id} className="blogItem">
+                <span className="blogMeta">{formatDate(publishedAt)}</span>
+                <div className="blogItemBody">
+                  {banner && (
+                    <Link className="blogItemImage" to={`/blog/${slug}`} aria-label={title}>
+                      <img src={banner} alt={bannerAlt || title} />
+                    </Link>
+                  )}
+                  <Link className="blogItemTitle" to={`/blog/${slug}`}>{title}</Link>
+                  {excerpt && <p>{excerpt}</p>}
+                  <div className="blogItemFooter">
+                    {readTime > 0 && <span>{readTime} min read</span>}
+                    {(tags || []).slice(0, 3).map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                    {github && (
+                      <a href={github} target="_blank" rel="noreferrer">
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         ) : (
-          <div className="blog__empty">
+          <div className="blogEmpty">
             {posts.length === 0 ? "No published posts yet." : "No posts match your search."}
           </div>
         )}
-      </div>
-    </section>
+      </section>
+    </main>
   )
 }
 

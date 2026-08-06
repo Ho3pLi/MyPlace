@@ -73,7 +73,7 @@ const Post = () => {
   }
 
   if (!post) {
-    return <Navigate to="/Blog" replace />
+    return <Navigate to="/blog" replace />
   }
 
   const index = posts.findIndex((item) => item.slug === post.slug)
@@ -149,13 +149,13 @@ const Post = () => {
 
       <div className="next_previous">
         {previous && (
-          <Link to={`/Blog/${previous.slug}`} className="post__link-previous">
+          <Link to={`/blog/${previous.slug}`} className="post__link-previous">
             Previous
           </Link>
         )}
 
         {next && (
-          <Link to={`/Blog/${next.slug}`} className="post__link-next">
+          <Link to={`/blog/${next.slug}`} className="post__link-next">
             Next
           </Link>
         )}

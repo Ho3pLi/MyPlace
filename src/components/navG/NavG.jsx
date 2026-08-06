@@ -12,7 +12,7 @@ const NavG = () => {
     <nav>
 
       <Link to="/" onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "active" : ''}><AiOutlineHome/></Link>
-      <Link to="/Blog" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ''}><BiBook/></Link>
+      <Link to="/blog" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ''}><BiBook/></Link>
       
     </nav>
   )

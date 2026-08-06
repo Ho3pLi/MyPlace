@@ -86,7 +86,7 @@ const moreLines = [
     label: "Elsewhere",
     content: (
       <>
-        <Link to="/Blog">Blog</Link>, <Link to="/statly">Statly</Link>, and{" "}
+        <Link to="/blog">Blog</Link>, <Link to="/statly">Statly</Link>, and{" "}
         <Link to="/developer-tools">Developer Tools</Link>
       </>
     )
@@ -110,7 +110,7 @@ const Home = () => {
     <main className="homePage">
       <nav className="homeNav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
-        <Link to="/Blog">Writing</Link>
+        <Link to="/blog">Writing</Link>
         <Link to="/developer-tools">Tools</Link>
         <a href="#contact">Contact</a>
       </nav>
@@ -164,7 +164,7 @@ const Home = () => {
               The frontend space is ready, while the backend for posts and publishing is still in progress.
             </p>
             <div className="homeItemLinks">
-              <Link to="/Blog">open blog route</Link>
+              <Link to="/blog">open blog route</Link>
             </div>
           </div>
         </article>

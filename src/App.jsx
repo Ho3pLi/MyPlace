@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { BrowserRouter as Router, Route, Routes, useLocation, matchPath } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, useLocation, matchPath, Navigate, useParams } from "react-router-dom"
 import { FiMoon, FiSun } from "react-icons/fi"
 import NavG from "./components/navG/NavG"
 import Admin from "./components/admin/Admin"
@@ -15,13 +15,18 @@ import Home from "./components/home/Home"
 const routesWithThemeToggle = [
   "/",
   "/admin",
-  "/Blog",
-  "/Blog/:slug",
+  "/blog",
+  "/blog/:slug",
   "/statly",
   "/developer-tools",
   "/developer-tools/privacy-policy",
   "/developer-tools/terms-of-service"
 ]
+
+const BlogPostRedirect = () => {
+  const { slug } = useParams()
+  return <Navigate to={`/blog/${slug}`} replace />
+}
 
 const AppContent = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem("site-theme") || "light")
@@ -62,14 +67,19 @@ const AppContent = () => {
         />
         <Route
           path="/Blog"
-          element={
-            <>
-              <Blog />
-              <NavG />
-            </>
-          }
+          caseSensitive
+          element={<Navigate to="/blog" replace />}
         />
-        <Route path="/Blog/:slug" element={<Post />} />
+        <Route
+          path="/Blog/:slug"
+          caseSensitive
+          element={<BlogPostRedirect />}
+        />
+        <Route
+          path="/blog"
+          element={<Blog />}
+        />
+        <Route path="/blog/:slug" element={<Post />} />
         <Route
           path="/statly"
           element={<Statly />}

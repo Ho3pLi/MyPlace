@@ -41,7 +41,7 @@ describe("App", () => {
   })
 
   it("renders an empty blog state when the API returns no posts", async () => {
-    renderApp("/Blog")
+    renderApp("/blog")
 
     expect(await screen.findByText(/no published posts yet/i)).toBeInTheDocument()
   })
