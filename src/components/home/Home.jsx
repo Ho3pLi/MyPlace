@@ -111,7 +111,6 @@ const Home = () => {
       <nav className="homeNav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
         <Link to="/blog">Writing</Link>
-        <Link to="/developer-tools">Tools</Link>
         <a href="#contact">Contact</a>
       </nav>
 
